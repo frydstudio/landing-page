@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סטודיו לעיצוב - פריד</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x600');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 20px;
+            color: white;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            animation: fadeInDown 1s;
+        }
+
+        .hero p {
+            font-size: 1.8rem;
+            margin: 20px 0 40px;
+            animation: fadeInUp 1s;
+        }
+
+        .hero button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #e0554f;
+        }
+
+        .services {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .services h2 {
+            font-size: 2.8rem;
+            color: #007BFF;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #007BFF;
+            display: inline-block;
+        }
+
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .service-item {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border-radius: 12px;
+            box-shadow: 6px 6px 12px #d1d1d1, -6px -6px 12px #ffffff;
+            text-align: center;
+            padding: 20px;
+            flex: 1 1 calc(33% - 40px);
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+            box-shadow: 8px 8px 16px #bcbcbc, -8px -8px 16px #ffffff;
+        }
+
+        .service-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .service-item h3 {
+            margin: 15px 0;
+            font-size: 1.6rem;
+        }
+
+        .portfolio {
+            margin: 50px 0;
+            background: #f0f4f8;
+            padding: 50px 20px;
+            border-radius: 12px;
+        }
+
+        .portfolio h2 {
+            font-size: 2.8rem;
+            color: #007BFF;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .portfolio-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 6px 6px 12px #d1d1d1, -6px -6px 12px #ffffff;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 8px 8px 16px #bcbcbc, -8px -8px 16px #ffffff;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .portfolio-item h3 {
+            margin: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin-top: 50px;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            box-shadow: inset 4px 4px 8px #d1d1d1, inset -4px -4px 8px #ffffff;
+        }
+
+        .contact-form button {
+            background-color: #ff6f61;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .contact-form button:hover {
+            background-color: #e0554f;
+            transform: scale(1.02);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>סטודיו פריד - עיצוב שמגשימים</h1>
+            <p>יצירתיות, דיוק וחדשנות. בואו להכיר את הפרויקטים שלנו!</p>
+            <button>גלו עוד</button>
+        </div>
+
+        <section class="services">
+            <h2>השירותים שלנו</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/300" alt="עיצוב גרפי">
+                    <h3>עיצוב גרפי</h3>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/300" alt="מיתוג עסקי">
+                    <h3>מיתוג עסקי</h3>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/300" alt="עיצוב דיגיטלי">
+                    <h3>עיצוב דיגיטלי</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio">
+            <h2>העבודות שלנו</h2>
+            <div class="portfolio-list">
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/300" alt="פרויקט 1">
+                    <h3>פרויקט 1</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src
