@@ -9,24 +9,29 @@
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f5f0ea;
             color: #333;
             direction: rtl;
             overflow-x: hidden;
         }
 
         .header {
-            background-color: #2d2d2d;
+            background-color: #4a2e19;
             color: white;
             padding: 20px;
             text-align: center;
         }
 
+        .header img {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
         .hero {
-            background-image: url('https://via.placeholder.com/1920x900');
+            background-image: url('path-to-your-image-1.jpg');
             background-size: cover;
             background-position: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
             text-align: center;
             color: white;
         }
@@ -34,6 +39,7 @@
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .hero p {
@@ -46,9 +52,10 @@
             border: none;
             padding: 15px 30px;
             font-size: 1.2rem;
-            border-radius: 5px;
+            border-radius: 30px;
             cursor: pointer;
             color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .hero button:hover {
@@ -58,12 +65,13 @@
         .about {
             padding: 50px 20px;
             text-align: center;
-            background-color: #f4f4f4;
+            background-color: #fff7ef;
         }
 
         .about h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
+            color: #4a2e19;
         }
 
         .about p {
@@ -74,11 +82,13 @@
         .gallery {
             padding: 50px 20px;
             text-align: center;
+            background-color: #f5f0ea;
         }
 
         .gallery h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
+            color: #4a2e19;
         }
 
         .gallery-grid {
@@ -89,9 +99,14 @@
 
         .gallery-item {
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
         }
 
         .gallery-item img {
@@ -99,8 +114,14 @@
             height: auto;
         }
 
+        .gallery-item p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: #4a2e19;
+        }
+
         .contact {
-            background-color: #2d2d2d;
+            background-color: #4a2e19;
             color: white;
             padding: 50px 20px;
             text-align: center;
@@ -131,7 +152,7 @@
             border: none;
             padding: 15px 30px;
             font-size: 1.2rem;
-            border-radius: 5px;
+            border-radius: 30px;
             cursor: pointer;
             color: white;
         }
@@ -143,48 +164,48 @@
 </head>
 <body>
     <div class="header">
+        <img src="path-to-your-logo.jpg" alt="לוגו הסטודיו">
         <h1>סטודיו פריד</h1>
-        <p>יצירתיות פוגשת טכנולוגיה</p>
+        <p>עיצוב שמגשים חלומות</p>
     </div>
 
     <div class="hero">
-        <h1>עיצוב יוקרתי וחדשני</h1>
-        <p>הפכו רעיונות למציאות עם המומחים שלנו.</p>
-        <button>צור קשר</button>
+        <h1>יוקרה, יצירתיות וחדשנות</h1>
+        <p>העיצוב המושלם מתחיל כאן.</p>
+        <button>צרו קשר</button>
     </div>
 
     <div class="about">
-        <h2>מי אנחנו</h2>
+        <h2>עלינו</h2>
         <p>
-            סטודיו פריד מתמחה ביצירת עיצובים חדשניים וייחודיים שמשלבים יצירתיות עם טכנולוגיה מתקדמת.
-            אנו מציעים פתרונות מותאמים אישית שמשדרים יוקרה, פונקציונליות וחדשנות.
+            בסטודיו פריד אנו מתמחים ביצירת עיצובים ייחודיים תוך שמירה על אסתטיקה וחיבור לחומרים הטבעיים והמתקדמים ביותר. אנו שואפים להגשים כל חלום עיצובי.
         </p>
     </div>
 
     <div class="gallery">
-        <h2>העבודות שלנו</h2>
+        <h2>פרויקטים נבחרים</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="https://via.placeholder.com/400" alt="מדף עגול">
-                <p>מדף עגול יוקרתי</p>
+                <img src="path-to-your-image-2.jpg" alt="פרויקט 1">
+                <p>עיצוב פנים יוקרתי</p>
             </div>
             <div class="gallery-item">
-                <img src="https://via.placeholder.com/400" alt="מנורת מבוך אור">
-                <p>מנורת מבוך אור</p>
+                <img src="path-to-your-image-3.jpg" alt="פרויקט 2">
+                <p>תאורה חדשנית</p>
             </div>
             <div class="gallery-item">
-                <img src="https://via.placeholder.com/400" alt="שעון שכבות">
-                <p>שעון שכבות</p>
+                <img src="path-to-your-image-4.jpg" alt="פרויקט 3">
+                <p>רהיטים בהתאמה אישית</p>
             </div>
         </div>
     </div>
 
     <div class="contact">
-        <h2>צור קשר</h2>
+        <h2>צרו קשר</h2>
         <form>
             <input type="text" name="name" placeholder="שם מלא" required>
             <input type="email" name="email" placeholder="אימייל" required>
-            <textarea name="message" placeholder="ספר לנו איך נוכל לעזור" rows="5" required></textarea>
+            <textarea name="message" placeholder="כתבו לנו את הצרכים שלכם" rows="5" required></textarea>
             <button type="submit">שלח הודעה</button>
         </form>
     </div>
