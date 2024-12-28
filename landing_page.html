@@ -1,160 +1,122 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>סטודיו לעיצוב - דף נחיתה</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
-            direction: rtl;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .hero {
-            background-image: url('https://via.placeholder.com/1920x600');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 20px;
-            color: white;
-            text-align: center;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 1.5rem;
-            margin: 10px 0 20px;
-        }
-        .services, .portfolio {
-            margin: 50px 0;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2rem;
-            color: #007BFF;
-        }
-        .services-list, .portfolio-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .service-item, .portfolio-item {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
-            flex: 1 1 calc(33% - 40px);
-            max-width: 300px;
-            text-align: center;
-        }
-        .service-item:hover, .portfolio-item:hover {
-            transform: scale(1.05);
-        }
-        .service-item img, .portfolio-item img {
-            width: 100%;
-            height: auto;
-        }
-        .service-item h3, .portfolio-item h3 {
-            margin: 15px;
-            font-size: 1.5rem;
-        }
-        .contact-form {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
-        }
-        .contact-form h2 {
-            margin: 0 0 20px;
-            text-align: center;
-        }
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form button {
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .contact-form button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>סטודיו פריד - עיצוב שמגשימים</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="hero">
-            <h1>ברוכים הבאים לסטודיו שלנו</h1>
-            <p>אנו מתמחים בעיצוב יצירתי ומקצועי. הצטרפו אלינו להגשמת החזון שלכם.</p>
+    <!-- כותרת עליונה -->
+    <header>
+        <div class="container">
+            <h1>סטודיו פריד</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">בית</a></li>
+                    <li><a href="#about">אודות</a></li>
+                    <li><a href="#products">מוצרים</a></li>
+                    <li><a href="#blog">בלוג</a></li>
+                    <li><a href="#contact">צור קשר</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <section class="services">
-            <h2 class="section-title">השירותים שלנו</h2>
-            <div class="services-list">
-                <div class="service-item">
-                    <img src="https://via.placeholder.com/300" alt="עיצוב גרפי">
-                    <h3>עיצוב גרפי</h3>
+    <!-- דף הבית -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>עיצוב שמגשימים</h2>
+            <p>חדשנות, יצירתיות ומקצועיות במקום אחד. בואו ליצור איתנו את החלום שלכם.</p>
+            <a href="#contact" class="btn">צרו קשר עכשיו</a>
+        </div>
+    </section>
+
+    <!-- אודות -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>מי אנחנו</h2>
+            <p>בסטודיו פריד אנו משלבים יצירתיות וטכנולוגיה מתקדמת ליצירת עיצובים ייחודיים ומרהיבים. המוצרים שלנו מותאמים אישית לכל לקוח, תוך הקפדה על איכות, דיוק ותשומת לב לפרטים.</p>
+        </div>
+    </section>
+
+    <!-- מוצרים -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>המוצרים שלנו</h2>
+            <div class="product-grid">
+                <!-- כרטיס מוצר -->
+                <div class="product-card">
+                    <img src="images/product1.jpg" alt="מוצר 1">
+                    <h3>מוצר 1</h3>
+                    <p>תיאור קצר של המוצר.</p>
                 </div>
-                <div class="service-item">
-                    <img src="https://via.placeholder.com/300" alt="מיתוג עסקי">
-                    <h3>מיתוג עסקי</h3>
+                <!-- כרטיס מוצר -->
+                <div class="product-card">
+                    <img src="images/product2.jpg" alt="מוצר 2">
+                    <h3>מוצר 2</h3>
+                    <p>תיאור קצר של המוצר.</p>
                 </div>
-                <div class="service-item">
-                    <img src="https://via.placeholder.com/300" alt="עיצוב אתרים">
-                    <h3>עיצוב אתרים</h3>
+                <!-- כרטיס מוצר -->
+                <div class="product-card">
+                    <img src="images/product3.jpg" alt="מוצר 3">
+                    <h3>מוצר 3</h3>
+                    <p>תיאור קצר של המוצר.</p>
+                </div>
+                <!-- כרטיס מוצר -->
+                <div class="product-card">
+                    <img src="images/product4.jpg" alt="מוצר 4">
+                    <h3>מוצר 4</h3>
+                    <p>תיאור קצר של המוצר.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="portfolio">
-            <h2 class="section-title">העבודות שלנו</h2>
-            <div class="portfolio-list">
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300" alt="פרויקט 1">
-                    <h3>פרויקט 1</h3>
+    <!-- בלוג -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2>מהבלוג שלנו</h2>
+            <div class="blog-posts">
+                <!-- פוסט בלוג -->
+                <div class="blog-post">
+                    <h3>כותרת פוסט 1</h3>
+                    <p>תקציר של הפוסט...</p>
+                    <a href="#">קרא עוד</a>
                 </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300" alt="פרויקט 2">
-                    <h3>פרויקט 2</h3>
+                <!-- פוסט בלוג -->
+                <div class="blog-post">
+                    <h3>כותרת פוסט 2</h3>
+                    <p>תקציר של הפוסט...</p>
+                    <a href="#">קרא עוד</a>
                 </div>
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/300" alt="פרויקט 3">
-                    <h3>פרויקט 3</h3>
+                <!-- פוסט בלוג -->
+                <div class="blog-post">
+                    <h3>כותרת פוסט 3</h3>
+                    <p>תקציר של הפוסט...</p>
+                    <a href="#">קרא עוד</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="contact-form">
-            <h2>צרו קשר</h2>
-            <form>
-                <input type="text" name="name" placeholder="שם מלא" required>
-                <input type="email" name="email" placeholder="אימייל" required>
-                <textarea name="message" placeholder="הודעה" rows="5" required></textarea>
-                <button type="submit">שלח הודעה</button>
+    <!-- צור קשר -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>צור קשר</h2>
+            <form action="send_message.php" method="post">
+                <label for="name">שם:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">אימייל:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">הודעה:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit" class="btn">שלח</button>
             </form>
-        </section>
-    </div>
-</body>
-</html>
+            <div class="contact-info">
+                <p>כתובת: רחוב המלאכה 15, רעננה, ישראל
+::contentReference[oaicite:0]{index=0}
+ 
