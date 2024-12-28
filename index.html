@@ -3,87 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>סטודיו פריד - עיצוב ייחודי</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <header>
+    <!-- HEADER -->
+    <header class="main-header">
         <div class="container">
-            <img src="images/logo.png" alt="לוגו סטודיו פריד" class="logo">
-            <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="לוגו סטודיו פריד">
+            </div>
+            <nav class="navbar">
                 <ul>
                     <li><a href="#about">אודות</a></li>
                     <li><a href="#services">שירותים</a></li>
                     <li><a href="#portfolio">פורטפוליו</a></li>
+                    <li><a href="#reviews">ביקורות</a></li>
                     <li><a href="#contact">צור קשר</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <h1>עיצובים ייחודיים בהשראת הטבע</h1>
-            <p>גלה את הקולקציה החדשה שלנו המשלבת יצירתיות וטכנולוגיה.</p>
-            <button onclick="location.href='#portfolio'">לצפייה בפורטפוליו</button>
+            <h1>ברוכים הבאים לסטודיו פריד</h1>
+            <p>עיצוב שמחבר יצירתיות עם טכנולוגיה</p>
+            <button onclick="location.href='#portfolio'">צפו בעבודות</button>
         </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="about">
         <div class="container">
             <h2>אודותינו</h2>
-            <p>סטודיו פריד מתמחה ביצירת עיצובים חדשניים המשלבים השראה מהטבע עם טכנולוגיות מתקדמות, במטרה להביא ללקוחותינו מוצרים ייחודיים ואיכותיים.</p>
+            <p>סטודיו פריד מציע חוויות עיצוביות ייחודיות שמחברות בין טבע לטכנולוגיה.</p>
+            <div class="about-grid">
+                <div class="about-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>עיצובים בהשראת הטבע</h3>
+                    <p>כל עיצוב נוצר מתוך השראה לטבע וליופי הפשוט שבו.</p>
+                </div>
+                <div class="about-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>חדשנות וטכנולוגיה</h3>
+                    <p>השילוב המנצח של עיצוב ואומנות עם חדשנות טכנולוגית.</p>
+                </div>
+                <div class="about-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>התאמה אישית</h3>
+                    <p>כל מוצר מותאם אישית לצרכים שלכם.</p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="services" class="services">
         <div class="container">
             <h2>השירותים שלנו</h2>
-            <div class="services-list">
-                <div class="service-item">
+            <div class="services-grid">
+                <div class="service-card">
                     <img src="images/service1.jpg" alt="עיצוב פנים">
                     <h3>עיצוב פנים</h3>
-                    <p>פתרונות עיצוביים לחללים פנימיים בהתאמה אישית.</p>
+                    <p>עיצובים מודרניים לחללים פנימיים.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-card">
                     <img src="images/service2.jpg" alt="עיצוב מוצר">
                     <h3>עיצוב מוצר</h3>
-                    <p>פיתוח מוצרים ייחודיים המשלבים פונקציונליות ואסתטיקה.</p>
+                    <p>מוצרים בהתאמה אישית וטכנולוגית.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-card">
                     <img src="images/service3.jpg" alt="עיצוב גרפי">
                     <h3>עיצוב גרפי</h3>
-                    <p>יצירת זהות מותגית חזקה באמצעות עיצובים גרפיים מרשימים.</p>
+                    <p>חוויות ויזואליות ללקוחות.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- PORTFOLIO -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2>העבודות שלנו</h2>
-            <div class="portfolio-list">
+            <h2>פורטפוליו</h2>
+            <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="images/portfolio1.jpg" alt="פרויקט 1">
-                    <h3>פרויקט עיצוב מודרני</h3>
+                    <img src="images/portfolio1.jpg" alt="עיצוב 1">
+                    <h3>עיצוב 1</h3>
                 </div>
                 <div class="portfolio-item">
-                    <img src="images/portfolio2.jpg" alt="פרויקט 2">
-                    <h3>עיצוב בהשראת הטבע</h3>
+                    <img src="images/portfolio2.jpg" alt="עיצוב 2">
+                    <h3>עיצוב 2</h3>
                 </div>
                 <div class="portfolio-item">
-                    <img src="images/portfolio3.jpg" alt="פרויקט 3">
-                    <h3>מוצר טכנולוגי חדשני</h3>
+                    <img src="images/portfolio3.jpg" alt="עיצוב 3">
+                    <h3>עיצוב 3</h3>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- REVIEWS -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2>מה הלקוחות אומרים?</h2>
+            <div class="reviews-grid">
+                <div class="review">
+                    <p>"עיצוב מושלם! ממליצה בחום!"</p>
+                    <h4>- שרון לוי</h4>
+                </div>
+                <div class="review">
+                    <p>"שירות אישי ועיצובים מדהימים."</p>
+                    <h4>- דוד כהן</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>צור קשר</h2>
-            <form class="contact-form" action="mailto:info@fryd-studio.com" method="post" enctype="text/plain">
+            <form action="#" method="POST">
                 <input type="text" name="name" placeholder="שם מלא" required>
                 <input type="email" name="email" placeholder="אימייל" required>
                 <textarea name="message" placeholder="הודעה" required></textarea>
@@ -93,9 +137,7 @@
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 סטודיו פריד. כל הזכויות שמורות.</p>
-        </div>
+        <p>&copy; 2024 סטודיו פריד</p>
     </footer>
 </body>
 </html>
