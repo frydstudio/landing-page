@@ -1,138 +1,119 @@
-<!DOCTYPE html>
-<html lang="he">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>סטודיו פריד - קטלוג עבודות</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            direction: rtl;
-        }
-
-        header {
-            background-color: #343a40;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-
-        .intro {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .intro h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .intro p {
-            font-size: 1.2rem;
-            color: #555;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-        }
-
-        .gallery-item h3 {
-            margin: 15px;
-            font-size: 1.5rem;
-            color: #007bff;
-            text-align: center;
-        }
-
-        footer {
-            background-color: #343a40;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1rem;
-        }
-    </style>
+    <title>סטודיו פריד - עיצוב שמגשימים</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- כותרת עליונה -->
     <header>
-        <h1>סטודיו פריד - קטלוג עבודות</h1>
+        <div class="container">
+            <h1>סטודיו פריד</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">בית</a></li>
+                    <li><a href="#about">אודות</a></li>
+                    <li><a href="#products">מוצרים</a></li>
+                    <li><a href="#blog">בלוג</a></li>
+                    <li><a href="#contact">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <section class="intro">
-            <h2>ברוכים הבאים לקטלוג שלנו</h2>
-            <p>עיינו בעבודות שלנו ובחרו את ההשראה המתאימה לכם לפרויקט הבא שלכם.</p>
-        </section>
+    <!-- דף הבית -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>עיצוב שמגשימים</h2>
+            <p>חדשנות, יצירתיות ומקצועיות במקום אחד. בואו ליצור איתנו את החלום שלכם.</p>
+            <a href="#contact" class="btn">צרו קשר עכשיו</a>
+        </div>
+    </section>
 
-        <section class="gallery">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/600x400" alt="עבודה 1">
-                <h3>עבודה 1</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/600x400" alt="עבודה 2">
-                <h3>עבודה 2</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/600x400" alt="עבודה 3">
-                <h3>עבודה 3</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/600x400" alt="עבודה 4">
-                <h3>עבודה 4</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/600x400" alt="עבודה 5">
-                <h3>עבודה 5</h3>
-            </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/600x400" alt="עבודה 6">
-                <h3>עבודה 6</h3>
-            </div>
-        </section>
-    </div>
+    <!-- אודות -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>מי אנחנו</h2>
+            <p>בסטודיו פריד אנו משלבים יצירתיות וטכנולוגיה מתקדמת ליצירת עיצובים ייחודיים ומרהיבים. המוצרים שלנו מותאמים אישית לכל לקוח, תוך הקפדה על איכות, דיוק ותשומת לב לפרטים.</p>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 סטודיו פריד. כל הזכויות שמורות.</p>
-    </footer>
-</body>
-</html>
+    <!-- מוצרים -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>המוצרים שלנו</h2>
+            <div class="product-grid">
+                <!-- כרטיס מוצר -->
+                <div class="product-card">
+                    <img src="images/product1.jpg" alt="מוצר 1">
+                    <h3>מוצר 1</h3>
+                    <p>תיאור קצר של המוצר.</p>
+                </div>
+                <!-- כרטיס מוצר -->
+                <div class="product-card">
+                    <img src="images/product2.jpg" alt="מוצר 2">
+                    <h3>מוצר 2</h3>
+                    <p>תיאור קצר של המוצר.</p>
+                </div>
+                <!-- כרטיס מוצר -->
+                <div class="product-card">
+                    <img src="images/product3.jpg" alt="מוצר 3">
+                    <h3>מוצר 3</h3>
+                    <p>תיאור קצר של המוצר.</p>
+                </div>
+                <!-- כרטיס מוצר -->
+                <div class="product-card">
+                    <img src="images/product4.jpg" alt="מוצר 4">
+                    <h3>מוצר 4</h3>
+                    <p>תיאור קצר של המוצר.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- בלוג -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2>מהבלוג שלנו</h2>
+            <div class="blog-posts">
+                <!-- פוסט בלוג -->
+                <div class="blog-post">
+                    <h3>כותרת פוסט 1</h3>
+                    <p>תקציר של הפוסט...</p>
+                    <a href="#">קרא עוד</a>
+                </div>
+                <!-- פוסט בלוג -->
+                <div class="blog-post">
+                    <h3>כותרת פוסט 2</h3>
+                    <p>תקציר של הפוסט...</p>
+                    <a href="#">קרא עוד</a>
+                </div>
+                <!-- פוסט בלוג -->
+                <div class="blog-post">
+                    <h3>כותרת פוסט 3</h3>
+                    <p>תקציר של הפוסט...</p>
+                    <a href="#">קרא עוד</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- צור קשר -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>צור קשר</h2>
+            <form action="send_message.php" method="post">
+                <label for="name">שם:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">אימייל:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">הודעה:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit" class="btn">שלח</button>
+            </form>
+            <div class="contact-info">
+                <p>כתובת: רחוב המלאכה 15, רעננה, ישראל
+::contentReference[oaicite:0]{index=0}
+ 
