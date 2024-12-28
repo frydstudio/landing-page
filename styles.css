@@ -1,88 +1,70 @@
-/* עיצוב כללי */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     direction: rtl;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #f8f8f8;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* עיצוב כותרת עליונה וניווט */
 header {
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 10px 0;
+    background-color: #004d40;
+    color: white;
+    padding: 20px 0;
 }
 
-header .logo {
-    height: 50px;
-    float: right;
+header .logo img {
+    height: 60px;
 }
 
-header nav {
-    float: left;
-}
-
-header nav ul {
+.navbar ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-header nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    color: #fff;
+.navbar ul li a {
     text-decoration: none;
+    color: white;
     font-weight: bold;
 }
 
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* עיצוב אזור גיבור (Hero) */
 .hero {
-    background-image: url('images/hero-background.jpg');
+    background-image: url('images/hero.jpg');
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
     text-align: center;
-    color: #fff;
+    color: white;
+    padding: 100px 20px;
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
 }
 
 .hero button {
-    background-color: #e74c3c;
+    background-color: #ff6f61;
     border: none;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 1rem;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    margin-top: 20px;
 }
 
-.hero button:hover {
-    background-color: #c0392b
-::contentReference[oaicite:0]{index=0}
- 
+.collection-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.collection-item {
+    text-align: center;
+}
+
+footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
