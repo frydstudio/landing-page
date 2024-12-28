@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סטודיו פריד - עיצוב יוקרתי</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background-color: #2d2d2d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1920x900');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+
+        .hero button {
+            background-color: #ff6f61;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .hero button:hover {
+            background-color: #e0554f;
+        }
+
+        .about {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .gallery {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .contact {
+            background-color: #2d2d2d;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact button {
+            background-color: #ff6f61;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .contact button:hover {
+            background-color: #e0554f;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>סטודיו פריד</h1>
+        <p>יצירתיות פוגשת טכנולוגיה</p>
+    </div>
+
+    <div class="hero">
+        <h1>עיצוב יוקרתי וחדשני</h1>
+        <p>הפכו רעיונות למציאות עם המומחים שלנו.</p>
+        <button>צור קשר</button>
+    </div>
+
+    <div class="about">
+        <h2>מי אנחנו</h2>
+        <p>
+            סטודיו פריד מתמחה ביצירת עיצובים חדשניים וייחודיים שמשלבים יצירתיות עם טכנולוגיה מתקדמת.
+            אנו מציעים פתרונות מותאמים אישית שמשדרים יוקרה, פונקציונליות וחדשנות.
+        </p>
+    </div>
+
+    <div class="gallery">
+        <h2>העבודות שלנו</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400" alt="מדף עגול">
+                <p>מדף עגול יוקרתי</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400" alt="מנורת מבוך אור">
+                <p>מנורת מבוך אור</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400" alt="שעון שכבות">
+                <p>שעון שכבות</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact">
+        <h2>צור קשר</h2>
+        <form>
+            <input type="text" name="name" placeholder="שם מלא" required>
+            <input type="email" name="email" placeholder="אימייל" required>
+            <textarea name="message" placeholder="ספר לנו איך נוכל לעזור" rows="5" required></textarea>
+            <button type="submit">שלח הודעה</button>
+        </form>
+    </div>
+</body>
+</html>
