@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>סטודיו פריד - עיצוב ייחודי</title>
+    <title>סטודיו פריד - עיצוב ייחודי וחדשני</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -11,13 +11,14 @@
     <!-- HEADER -->
     <header class="main-header">
         <div class="container">
-            <img src="images/logo.png" alt="לוגו סטודיו פריד" class="logo">
-            <nav>
-                <ul class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="לוגו סטודיו פריד">
+            </div>
+            <nav class="navbar">
+                <ul>
                     <li><a href="#about">אודות</a></li>
-                    <li><a href="#services">שירותים</a></li>
-                    <li><a href="#portfolio">פורטפוליו</a></li>
-                    <li><a href="#reviews">ביקורות</a></li>
+                    <li><a href="#collections">קולקציות</a></li>
+                    <li><a href="#customization">התאמה אישית</a></li>
                     <li><a href="#contact">צור קשר</a></li>
                 </ul>
             </nav>
@@ -27,9 +28,9 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
-            <h1>ברוכים הבאים לסטודיו פריד</h1>
-            <p>עיצוב שמחבר יצירתיות עם טכנולוגיה</p>
-            <button onclick="location.href='#portfolio'">צפו בעבודות</button>
+            <h1>יצירתיות וטכנולוגיה נפגשים</h1>
+            <p>עיצוב ייחודי שמוסיף קסם לכל חלל</p>
+            <button onclick="location.href='#collections'">לצפייה בקולקציות</button>
         </div>
     </section>
 
@@ -37,86 +38,39 @@
     <section id="about" class="about">
         <div class="container">
             <h2>אודותינו</h2>
-            <p>סטודיו פריד מציע חוויות עיצוביות ייחודיות שמחברות בין טבע לטכנולוגיה.</p>
-            <div class="about-grid">
-                <div class="about-item">
-                    <i class="fas fa-leaf"></i>
-                    <h3>עיצובים בהשראת הטבע</h3>
-                    <p>כל עיצוב נוצר מתוך השראה לטבע וליופי הפשוט שבו.</p>
+            <p>סטודיו פריד מתמחה ביצירת עיצובים ייחודיים המשלבים בין יצירתיות לטכנולוגיה מתקדמת. המוצרים שלנו נועדו לשדרג את החלל שלכם, תוך שמירה על איכות ופונקציונליות.</p>
+        </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section id="collections" class="collections">
+        <div class="container">
+            <h2>הקולקציות שלנו</h2>
+            <div class="collection-grid">
+                <div class="collection-item">
+                    <img src="images/shelves.jpg" alt="מדפים">
+                    <h3>מדפים מעוצבים</h3>
+                    <p>פתרונות אחסון ודקורציה מושלמים לכל חלל.</p>
                 </div>
-                <div class="about-item">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>חדשנות וטכנולוגיה</h3>
-                    <p>השילוב המנצח של עיצוב ואומנות עם חדשנות טכנולוגית.</p>
+                <div class="collection-item">
+                    <img src="images/lighting.jpg" alt="תאורה">
+                    <h3>גופי תאורה</h3>
+                    <p>תאורה מעוצבת שמשדרגת את הבית.</p>
                 </div>
-                <div class="about-item">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    <h3>התאמה אישית</h3>
-                    <p>כל מוצר מותאם אישית לצרכים שלכם.</p>
+                <div class="collection-item">
+                    <img src="images/clocks.jpg" alt="שעונים">
+                    <h3>שעונים דקורטיביים</h3>
+                    <p>עיצוב ייחודי שמתאים לכל סגנון.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="services">
+    <!-- CUSTOMIZATION -->
+    <section id="customization" class="customization">
         <div class="container">
-            <h2>השירותים שלנו</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="images/service1.jpg" alt="עיצוב פנים">
-                    <h3>עיצוב פנים</h3>
-                    <p>עיצובים מודרניים לחללים פנימיים.</p>
-                </div>
-                <div class="service-card">
-                    <img src="images/service2.jpg" alt="עיצוב מוצר">
-                    <h3>עיצוב מוצר</h3>
-                    <p>מוצרים בהתאמה אישית וטכנולוגית.</p>
-                </div>
-                <div class="service-card">
-                    <img src="images/service3.jpg" alt="עיצוב גרפי">
-                    <h3>עיצוב גרפי</h3>
-                    <p>חוויות ויזואליות ללקוחות.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>פורטפוליו</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="images/portfolio1.jpg" alt="עיצוב 1">
-                    <h3>עיצוב 1</h3>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/portfolio2.jpg" alt="עיצוב 2">
-                    <h3>עיצוב 2</h3>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/portfolio3.jpg" alt="עיצוב 3">
-                    <h3>עיצוב 3</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REVIEWS -->
-    <section id="reviews" class="reviews">
-        <div class="container">
-            <h2>מה הלקוחות אומרים?</h2>
-            <div class="reviews-grid">
-                <div class="review">
-                    <p>"עיצוב מושלם! ממליצה בחום!"</p>
-                    <h4>- שרון לוי</h4>
-                </div>
-                <div class="review">
-                    <p>"שירות אישי ועיצובים מדהימים."</p>
-                    <h4>- דוד כהן</h4>
-                </div>
-            </div>
+            <h2>התאמה אישית</h2>
+            <p>אנו מציעים עיצוב מותאם אישית לפי הצרכים שלכם. בין אם מדובר בשינוי גודל, צבע או חומר, אנו נדאג ליצירה שמותאמת לכם באופן מושלם.</p>
         </div>
     </section>
 
@@ -124,7 +78,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>צור קשר</h2>
-            <form action="#" method="POST">
+            <form action="mailto:Frydstudio360@gmail.com" method="post" enctype="text/plain">
                 <input type="text" name="name" placeholder="שם מלא" required>
                 <input type="email" name="email" placeholder="אימייל" required>
                 <textarea name="message" placeholder="הודעה" required></textarea>
@@ -134,7 +88,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 סטודיו פריד</p>
+        <div class="container">
+            <p>&copy; 2024 סטודיו פריד. כל הזכויות שמורות.</p>
+        </div>
     </footer>
 </body>
 </html>
