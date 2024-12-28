@@ -1,70 +1,50 @@
+/* כללי */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     direction: rtl;
-    background-color: #f8f8f8;
+    background-color: #f4f4f4;
 }
 
-header {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* כותרת */
+.main-header {
     background-color: #004d40;
     color: white;
-    padding: 20px 0;
-}
-
-header .logo img {
-    height: 60px;
+    padding: 20px;
 }
 
 .navbar ul {
     list-style: none;
-    padding: 0;
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: white;
-    font-weight: bold;
 }
 
-.hero {
-    background-image: url('images/hero.jpg');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    color: white;
-    padding: 100px 20px;
+/* התאמה אישית */
+.customization-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.hero h1 {
-    font-size: 3rem;
-}
-
-.hero button {
-    background-color: #ff6f61;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.collection-grid {
+.product-preview {
+    width: 100%;
+    height: 300px;
+    background: #eee;
     display: flex;
-    gap: 20px;
-}
-
-.collection-item {
-    text-align: center;
-}
-
-footer {
-    background-color: #004d40;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
