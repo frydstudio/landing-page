@@ -5,29 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>סטודיו פריד - עיצוב ייחודי</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
-        <h1>ברוכים הבאים לסטודיו פריד</h1>
-        <nav>
-            <a href="#about">אודות</a>
-            <a href="#products">מוצרים</a>
-            <a href="#contact">צור קשר</a>
-        </nav>
+        <div class="container">
+            <img src="images/logo.png" alt="לוגו סטודיו פריד" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#about">אודות</a></li>
+                    <li><a href="#services">שירותים</a></li>
+                    <li><a href="#portfolio">פורטפוליו</a></li>
+                    <li><a href="#contact">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <section id="about">
-        <h2>אודות</h2>
-        <p>אנו מתמחים בעיצובים חדשניים המשלבים יצירתיות וטכנולוגיה.</p>
+
+    <section class="hero">
+        <div class="container">
+            <h1>עיצובים ייחודיים בהשראת הטבע</h1>
+            <p>גלה את הקולקציה החדשה שלנו המשלבת יצירתיות וטכנולוגיה.</p>
+            <button onclick="location.href='#portfolio'">לצפייה בפורטפוליו</button>
+        </div>
     </section>
-    <section id="products">
-        <h2>מוצרים</h2>
-        <p>מבחר מוצרי עיצוב בהשראת הטבע והחדשנות.</p>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>אודותינו</h2>
+            <p>סטודיו פריד מתמחה ביצירת עיצובים חדשניים המשלבים השראה מהטבע עם טכנולוגיות מתקדמות, במטרה להביא ללקוחותינו מוצרים ייחודיים ואיכותיים.</p>
+        </div>
     </section>
-    <section id="contact">
-        <h2>צור קשר</h2>
-        <p>כתובת: רחוב המלאכה 15, רעננה, ישראל</p>
-        <p>טלפון: 050-933-4987</p>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>השירותים שלנו</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <img src="images/service1.jpg" alt="עיצוב פנים">
+                    <h3>עיצוב פנים</h3>
+                    <p>פתרונות עיצוביים לחללים פנימיים בהתאמה אישית.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/service2.jpg" alt="עיצוב מוצר">
+                    <h3>עיצוב מוצר</h3>
+                    <p>פיתוח מוצרים ייחודיים המשלבים פונקציונליות ואסתטיקה.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/service3.jpg" alt="עיצוב גרפי">
+                    <h3>עיצוב גרפי</h3>
+                    <p>יצירת זהות מותגית חזקה באמצעות עיצובים גרפיים מרשימים.</p>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>העבודות שלנו</h2>
+            <div class="portfolio-list">
+                <div class="portfolio-item">
+                    <img src="images/portfolio1.jpg" alt="פרויקט 1">
+                    <h3>פרויקט עיצוב מודרני</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/portfolio2.jpg" alt="פרויקט 2">
+                    <h3>עיצוב בהשראת הטבע</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/portfolio3.jpg" alt="פרויקט 3">
+                    <h3>מוצר טכנולוגי חדשני</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>צור קשר</h2>
+            <form class="contact-form" action="mailto:info@fryd-studio.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="שם מלא" required>
+                <input type="email" name="email" placeholder="אימייל" required>
+                <textarea name="message" placeholder="הודעה" required></textarea>
+                <button type="submit">שלח</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 סטודיו פריד. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
 </body>
 </html>
-
