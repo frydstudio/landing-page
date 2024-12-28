@@ -3,110 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>סטודיו פריד - עיצוב יוקרתי</title>
+    <title>סטודיו פריד - קטלוג עבודות</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: #f5f0ea;
+            background-color: #f8f9fa;
             color: #333;
             direction: rtl;
-            overflow-x: hidden;
         }
 
-        .header {
-            background-color: #4a2e19;
+        header {
+            background-color: #343a40;
             color: white;
             padding: 20px;
             text-align: center;
         }
 
-        .header img {
-            width: 150px;
-            margin-bottom: 10px;
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
         }
 
-        .hero {
-            background-image: url('path-to-your-image-1.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 120px 20px;
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .intro {
             text-align: center;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
             margin-bottom: 40px;
         }
 
-        .hero button {
-            background-color: #ff6f61;
-            border: none;
-            padding: 15px 30px;
+        .intro h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
             font-size: 1.2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero button:hover {
-            background-color: #e0554f;
-        }
-
-        .about {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #fff7ef;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #4a2e19;
-        }
-
-        .about p {
-            font-size: 1.2rem;
-            line-height: 1.6;
+            color: #555;
         }
 
         .gallery {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #f5f0ea;
-        }
-
-        .gallery h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #4a2e19;
-        }
-
-        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
         .gallery-item {
-            border: 1px solid #ddd;
+            background: white;
             border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .gallery-item:hover {
             transform: scale(1.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
         }
 
         .gallery-item img {
@@ -114,100 +71,68 @@
             height: auto;
         }
 
-        .gallery-item p {
-            margin: 10px 0;
-            font-size: 1.1rem;
-            color: #4a2e19;
-        }
-
-        .contact {
-            background-color: #4a2e19;
-            color: white;
-            padding: 50px 20px;
+        .gallery-item h3 {
+            margin: 15px;
+            font-size: 1.5rem;
+            color: #007bff;
             text-align: center;
         }
 
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .contact form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact input,
-        .contact textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .contact button {
-            background-color: #ff6f61;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            border-radius: 30px;
-            cursor: pointer;
+        footer {
+            background-color: #343a40;
             color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
         }
 
-        .contact button:hover {
-            background-color: #e0554f;
+        footer p {
+            margin: 0;
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="path-to-your-logo.jpg" alt="לוגו הסטודיו">
-        <h1>סטודיו פריד</h1>
-        <p>עיצוב שמגשים חלומות</p>
-    </div>
+    <header>
+        <h1>סטודיו פריד - קטלוג עבודות</h1>
+    </header>
 
-    <div class="hero">
-        <h1>יוקרה, יצירתיות וחדשנות</h1>
-        <p>העיצוב המושלם מתחיל כאן.</p>
-        <button>צרו קשר</button>
-    </div>
+    <div class="container">
+        <section class="intro">
+            <h2>ברוכים הבאים לקטלוג שלנו</h2>
+            <p>עיינו בעבודות שלנו ובחרו את ההשראה המתאימה לכם לפרויקט הבא שלכם.</p>
+        </section>
 
-    <div class="about">
-        <h2>עלינו</h2>
-        <p>
-            בסטודיו פריד אנו מתמחים ביצירת עיצובים ייחודיים תוך שמירה על אסתטיקה וחיבור לחומרים הטבעיים והמתקדמים ביותר. אנו שואפים להגשים כל חלום עיצובי.
-        </p>
-    </div>
-
-    <div class="gallery">
-        <h2>פרויקטים נבחרים</h2>
-        <div class="gallery-grid">
+        <section class="gallery">
             <div class="gallery-item">
-                <img src="path-to-your-image-2.jpg" alt="פרויקט 1">
-                <p>עיצוב פנים יוקרתי</p>
+                <img src="https://via.placeholder.com/600x400" alt="עבודה 1">
+                <h3>עבודה 1</h3>
             </div>
             <div class="gallery-item">
-                <img src="path-to-your-image-3.jpg" alt="פרויקט 2">
-                <p>תאורה חדשנית</p>
+                <img src="https://via.placeholder.com/600x400" alt="עבודה 2">
+                <h3>עבודה 2</h3>
             </div>
             <div class="gallery-item">
-                <img src="path-to-your-image-4.jpg" alt="פרויקט 3">
-                <p>רהיטים בהתאמה אישית</p>
+                <img src="https://via.placeholder.com/600x400" alt="עבודה 3">
+                <h3>עבודה 3</h3>
             </div>
-        </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/600x400" alt="עבודה 4">
+                <h3>עבודה 4</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/600x400" alt="עבודה 5">
+                <h3>עבודה 5</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/600x400" alt="עבודה 6">
+                <h3>עבודה 6</h3>
+            </div>
+        </section>
     </div>
 
-    <div class="contact">
-        <h2>צרו קשר</h2>
-        <form>
-            <input type="text" name="name" placeholder="שם מלא" required>
-            <input type="email" name="email" placeholder="אימייל" required>
-            <textarea name="message" placeholder="כתבו לנו את הצרכים שלכם" rows="5" required></textarea>
-            <button type="submit">שלח הודעה</button>
-        </form>
-    </div>
+    <footer>
+        <p>&copy; 2024 סטודיו פריד. כל הזכויות שמורות.</p>
+    </footer>
 </body>
 </html>
