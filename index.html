@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="סטודיו פריד - עיצובים ייחודיים המשלבים יצירתיות וטכנולוגיה מתקדמת">
     <meta name="keywords" content="עיצוב, סטודיו פריד, טכנולוגיה מתקדמת, עיצוב בהתאמה אישית, סדנאות יצירה">
-    <meta name="author" content="סטודיו פריד">
     <title>סטודיו פריד - יצירתיות פוגשת טכנולוגיה</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Rubik', sans-serif;
             margin: 0;
             padding: 0;
             direction: rtl;
@@ -17,61 +17,73 @@
             color: #333;
         }
         header {
-            background-color: #282c34;
+            background: linear-gradient(to right, #0072ff, #00c6ff);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
         }
         header p {
             font-size: 1.2em;
         }
         nav {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #61dafb;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            background-color: #0072ff;
         }
         nav a {
             margin: 0 15px;
             color: white;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.1em;
         }
         nav a:hover {
             text-decoration: underline;
         }
         section {
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
         section h2 {
-            color: #444;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #0072ff;
         }
-        .services, .testimonials, .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .services, .gallery, .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
-        .service, .testimonial, .gallery-item {
+        .card {
             background: white;
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            width: 300px;
+            transition: transform 0.3s ease;
         }
-        .service h3, .testimonial h3, .gallery-item h3 {
-            color: #282c34;
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h3 {
+            color: #0072ff;
+            margin: 10px 0;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
         }
         footer {
             background-color: #282c34;
             color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 20px;
+            margin-top: 40px;
         }
         footer a {
             color: #61dafb;
@@ -81,26 +93,24 @@
             text-decoration: underline;
         }
         button {
-            background-color: #61dafb;
+            background-color: #0072ff;
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
-            cursor: pointer;
             font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #21a1f1;
+            background-color: #005bb5;
         }
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-        .social-icons img {
-            width: 30px;
-            height: 30px;
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -121,61 +131,61 @@
 
 <section id="about">
     <h2>מי אנחנו?</h2>
-    <p>סטודיו פריד מוביל את עולם העיצוב באמצעות טכנולוגיות מתקדמות כמו חיתוך לייזר, עם מיקוד בעיצובים מותאמים אישית וחדשניים.</p>
+    <p>סטודיו פריד מוביל את עולם העיצוב עם טכנולוגיות מתקדמות, תוך התמקדות ביצירת עיצובים מותאמים אישית ברמה הגבוהה ביותר.</p>
 </section>
 
 <section id="services" class="services">
-    <div class="service">
+    <h2>השירותים שלנו</h2>
+    <div class="card">
         <h3>עיצובים בהתאמה אישית</h3>
-        <p>אנו מממשים את החזון שלך בעזרת עיצובים ייחודיים ומותאמים לצרכים האישיים שלך.</p>
+        <p>אנו יוצרים עיצובים ייחודיים לפי דרישות הלקוח.</p>
     </div>
-    <div class="service">
+    <div class="card">
         <h3>מוצרים קיימים</h3>
-        <p>מגוון פריטים מעוצבים המשלבים אומנות וטכנולוגיה.</p>
+        <p>מגוון מוצרים מעוצבים שזמינים להזמנה מידית.</p>
     </div>
-    <div class="service">
+    <div class="card">
         <h3>סדנאות יצירה</h3>
-        <p>הזדמנות ליצור בעצמך מוצר ייחודי וחדשני בסדנה מקצועית.</p>
+        <p>למדו ליצור פריטים ייחודיים בסדנאות יצירה מקצועיות.</p>
     </div>
 </section>
 
 <section id="gallery" class="gallery">
     <h2>גלריה</h2>
-    <div class="gallery-item">
-        <h3>תמונה 1</h3>
-        <p>תיאור מוצר לדוגמה.</p>
+    <div class="card">
+        <img src="product1.jpg" alt="מוצר 1">
+        <h3>עיצוב ייחודי</h3>
     </div>
-    <div class="gallery-item">
-        <h3>תמונה 2</h3>
-        <p>תיאור מוצר נוסף.</p>
+    <div class="card">
+        <img src="product2.jpg" alt="מוצר 2">
+        <h3>עיצוב מודרני</h3>
     </div>
 </section>
 
 <section id="testimonials" class="testimonials">
     <h2>לקוחות ממליצים</h2>
-    <div class="testimonial">
-        <h3>לקוח א'</h3>
-        <p>"השירות היה מעולה והמוצר מושלם!"</p>
+    <div class="card">
+        <p>"חוויה מדהימה! המוצרים של סטודיו פריד שדרגו את הבית שלי!"</p>
+        <h3>איילת</h3>
     </div>
-    <div class="testimonial">
-        <h3>לקוח ב'</h3>
-        <p>"חוויה מדהימה, אמשיך להזמין!"</p>
+    <div class="card">
+        <p>"עבודה מקצועית, חדשנית, ויחס אישי לאורך כל הדרך. מומלץ בחום!"</p>
+        <h3>יוסי</h3>
     </div>
 </section>
 
 <section id="contact">
     <h2>צור קשר</h2>
-    <p>נשמח ללוות אותך בתהליך העיצוב. ניתן ליצור קשר בטלפון 050-9334987 או במייל Frydstudio360@gmail.com</p>
-    <button onclick="window.location.href='mailto:Frydstudio360@gmail.com'">שלח מייל</button>
+    <form class="contact-form">
+        <input type="text" name="name" placeholder="שם מלא" required>
+        <input type="email" name="email" placeholder="אימייל" required>
+        <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
+        <button type="submit">שלח</button>
+    </form>
 </section>
 
 <footer>
-    <p>&copy; 2024 סטודיו פריד - יצירתיות פוגשת טכנולוגיה | <a href="mailto:Frydstudio360@gmail.com">דוא"ל</a></p>
-    <div class="social-icons">
-        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
-        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
-    </div>
+    <p>&copy; 2024 סטודיו פריד | <a href="#">אינסטגרם</a> | <a href="#">פייסבוק</a></p>
 </footer>
 
 </body>
