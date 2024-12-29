@@ -58,11 +58,41 @@
             margin-bottom: 20px;
             color: #2F6376;
         }
-        .gallery, .testimonials {
+        .about-section {
+            position: relative;
+            max-height: 150px; /* Approx. 3 lines */
+            overflow: hidden;
+            text-align: center;
+            transition: max-height 0.5s ease;
+        }
+        .about-section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f9f9f9);
+        }
+        .read-more-btn {
+            margin-top: 20px;
+            display: inline-block;
+            background-color: #F09415;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .read-more-btn:hover {
+            background-color: #d97d10;
+        }
+        .gallery, .testimonials, .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            gap: 30px;
+            margin-top: 30px;
         }
         .card {
             background: white;
@@ -78,6 +108,10 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
+        }
+        .catalog {
+            margin-top: 20px;
+            text-align: center;
         }
         .catalog-button {
             display: inline-block;
@@ -130,6 +164,7 @@
             סטודיו פריד מתמחה ביצירת עיצובים חדשניים וייחודיים שמשלבים יצירתיות עם טכנולוגיה מתקדמת.
             המוצרים שלנו תוכננו להציע שילוב מושלם בין אסתטיקה ופונקציונליות, ומיועדים לתת מענה לצרכים המגוונים של הלקוחות שלנו.
             כל פרויקט מתחיל בהקשבה והבנה מעמיקה של החזון שלך, ומסתיים במוצרים מרהיבים המותאמים לדרישה.
+            עם דגש על איכות, דיוק ותשומת לב לפרטים הקטנים.
         </p>
     </div>
     <button class="read-more-btn" id="read-more-btn" onclick="toggleAbout()">המשך קריאה</button>
