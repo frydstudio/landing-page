@@ -29,9 +29,8 @@
         }
         header p {
             font-size: 1.2em;
-            font-weight: 300; /* Light */
-            margin: 10px 0 0;
-            font-style: italic;
+            font-weight: 400; /* Regular */
+            margin: 5px 0 0;
         }
         nav {
             display: flex;
@@ -59,57 +58,106 @@
             margin-bottom: 20px;
             color: #2F6376;
         }
-        .services, .gallery, .testimonials, .catalog {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .about-section {
+            position: relative;
+            max-height: 150px; /* Approx. 3 lines */
+            overflow: hidden;
+            text-align: center;
+        }
+        .about-section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f9f9f9);
+        }
+        .read-more-btn {
             margin-top: 20px;
-        }
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .catalog-button {
             display: inline-block;
-            padding: 10px 20px;
             background-color: #F09415;
             color: white;
-            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
             border-radius: 5px;
-            font-size: 1em;
+            cursor: pointer;
             font-weight: bold;
-            transition: background-color 0.3s ease;
         }
-        .catalog-button:hover {
+        .read-more-btn:hover {
             background-color: #d97d10;
         }
-        .read-more {
-            color: #F09415;
-            cursor: pointer;
-            text-decoration: underline;
-            font-weight: bold;
-            margin-top: 10px;
-            display: inline-block;
-        }
-        footer {
-            background-color: #282c34;
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #F09415;
             color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 60px;
+            height: 60px;
+        }
+        .chat-widget:hover {
+            background-color: #d97d10;
+        }
+        .chat-box {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .chat-box header {
+            background-color: #F09415;
+            color: white;
+            padding: 10px;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            font-weight: bold;
+            position: relative;
         }
-        footer a {
-            color: #F09415;
-            text-decoration: none;
+        .chat-box .close-chat {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background: none;
+            border: none;
+            color: #000000;
+            font-size: 1.2em;
+            cursor: pointer;
         }
-        footer a:hover {
-            text-decoration: underline;
+        .chat-box form {
+            padding: 15px;
+        }
+        .chat-box input, .chat-box textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .chat-box button {
+            width: 100%;
+            background-color: #F09415;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .chat-box button:hover {
+            background-color: #d97d10;
         }
     </style>
 </head>
@@ -129,22 +177,14 @@
 
 <section id="about">
     <h2>מי אנחנו?</h2>
-    <p id="about-short">
-        סטודיו פריד מתמחה ביצירת עיצובים חדשניים וייחודיים שמשלבים יצירתיות עם טכנולוגיה מתקדמת.
-        המוצרים שלנו תוכננו להציע שילוב מושלם בין אסתטיקה ופונקציונליות, ומיועדים לתת מענה לצרכים המגוונים של הלקוחות שלנו.
-    </p>
-    <p id="about-full" style="display: none;">
-        כל פרויקט מתחיל בהקשבה והבנה מעמיקה של החזון שלך,
-        ומסתיים במוצרים מרהיבים המותאמים לדרישה.
-        עם דגש על איכות, דיוק ותשומת לב לפרטים הקטנים.
-        אנו מוודאים שכל פריט שאנחנו יוצרים מטופל באופן מושלם.
-    </p>
-    <span class="read-more" onclick="toggleAbout()">המשך קריאה</span>
-</section>
-
-<section id="catalog" class="catalog">
-    <h2>קטלוג 2025</h2>
-    <a href="catalog2025.pdf" class="catalog-button" download>להורדה לחץ כאן</a>
+    <div class="about-section" id="about-section">
+        <p>
+            סטודיו פריד מתמחה ביצירת עיצובים חדשניים וייחודיים שמשלבים יצירתיות עם טכנולוגיה מתקדמת.
+            המוצרים שלנו תוכננו להציע שילוב מושלם בין אסתטיקה ופונקציונליות, ומיועדים לתת מענה לצרכים המגוונים של הלקוחות שלנו.
+            כל פרויקט מתחיל בהקשבה והבנה מעמיקה של החזון שלך, ומסתיים במוצרים מרהיבים המותאמים לדרישה.
+        </p>
+    </div>
+    <button class="read-more-btn" id="read-more-btn" onclick="toggleAbout()">המשך קריאה</button>
 </section>
 
 <section id="services" class="services">
@@ -171,15 +211,36 @@
     </p>
 </footer>
 
+<div class="chat-widget" onclick="toggleChat()">💬</div>
+<div class="chat-box" id="chatBox">
+    <header>
+        השאר פרטים ונחזור אליך
+        <button class="close-chat" onclick="toggleChat()">X</button>
+    </header>
+    <form>
+        <input type="text" name="name" placeholder="שם מלא" required>
+        <input type="email" name="email" placeholder="אימייל" required>
+        <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
+        <button type="submit">שלח</button>
+    </form>
+</div>
+
 <script>
+    function toggleChat() {
+        const chatBox = document.getElementById('chatBox');
+        chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+    }
     function toggleAbout() {
-        const shortText = document.getElementById('about-short');
-        const fullText = document.getElementById('about-full');
-        const isExpanded = fullText.style.display === 'block';
-        fullText.style.display = isExpanded ? 'none' : 'block';
-        shortText.style.display = isExpanded ? 'block' : 'none';
-        if (!isExpanded) {
-            document.querySelector('.read-more').style.display = 'none';
+        const aboutSection = document.getElementById('about-section');
+        const readMoreBtn = document.getElementById('read-more-btn');
+        if (aboutSection.style.maxHeight === 'none') {
+            aboutSection.style.maxHeight = '150px';
+            aboutSection.classList.add('about-section');
+            readMoreBtn.innerHTML = 'המשך קריאה';
+        } else {
+            aboutSection.style.maxHeight = 'none';
+            aboutSection.classList.remove('about-section');
+            readMoreBtn.innerHTML = 'סגור טקסט';
         }
     }
 </script>
