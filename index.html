@@ -1,97 +1,99 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>סטודיו פריד - עיצוב שמשנה את החלל</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שם הסטודיו - דף נחיתה</title>
+  <!-- תיאור קצר עבור מנועי חיפוש (SEO) -->
+  <meta name="description" content="דף נחיתה לסטודיו לעיצוב/פיתוח - הצגת עבודות ויצירת קשר מהירה">
+  <!-- קישור לקובץ ה-CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- אפשרות לשימוש בגופן עברי (כדוגמת 'Alef'/'Rubik'/'Assistant') מ-Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- לדוגמה: נעשה שימוש בגופן Assistant -->
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="main-header">
-        <div class="container">
-            <div class="logo">
-                <img src="assets/images/logo.png" alt="לוגו סטודיו פריד">
-            </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#about">אודות</a></li>
-                    <li><a href="#collections">קולקציות</a></li>
-                    <li><a href="#customization">התאמה אישית</a></li>
-                    <li><a href="#contact">צור קשר</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="container">
-            <h1>עיצוב שמשנה את המציאות</h1>
-            <p>חדשנות שמוסיפה קסם לכל חלל</p>
-            <a href="#collections" class="btn">גלו את הקולקציות</a>
-        </div>
-    </section>
+  <!-- כותרת עליונה -->
+  <header class="main-header">
+    <div class="container">
+      <h1 class="logo">לוגו / סטודיו פריד/h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#portfolio">עבודות</a></li>
+          <li><a href="#contact">צור קשר</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>אודות סטודיו פריד</h2>
-            <p>בסטודיו פריד אנו יוצרים עיצובים שמשלבים טכנולוגיה וחדשנות עם השראה מהטבע. כל פרויקט הוא יצירה שנעשית בהתאמה אישית ללקוח.</p>
-        </div>
-    </section>
+  <!-- סקשן HERO (סקשן מרכזי עם הצגה של הסטודיו) -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h2>ברוכים הבאים לסטודיו שלנו</h2>
+      <p>עיצוב. יצירתיות. חדשנות.</p>
+      <a href="#contact" class="btn-hero">צור קשר מהיר</a>
+    </div>
+  </section>
 
-    <!-- COLLECTIONS SECTION -->
-    <section id="collections" class="collections">
-        <div class="container">
-            <h2>הקולקציות שלנו</h2>
-            <div class="collection-grid">
-                <div class="collection-item">
-                    <img src="assets/images/shelves.jpg" alt="מדפים מעוצבים">
-                    <h3>מדפים מעוצבים</h3>
-                    <p>שדרגו כל חלל עם המדפים המעוצבים שלנו.</p>
-                </div>
-                <div class="collection-item">
-                    <img src="assets/images/lighting.jpg" alt="גופי תאורה">
-                    <h3>גופי תאורה</h3>
-                    <p>פתרונות תאורה שמשלבים פונקציונליות ואסתטיקה.</p>
-                </div>
-                <div class="collection-item">
-                    <img src="assets/images/clocks.jpg" alt="שעונים מעוצבים">
-                    <h3>שעונים מעוצבים</h3>
-                    <p>עיצוב שמשאיר חותם, גם על הזמן.</p>
-                </div>
-            </div>
+  <!-- סקשן עבודות (Portfolio) -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2>העבודות שלנו</h2>
+      <p>כמה מהפרויקטים האחרונים שלנו:</p>
+      <div class="grid">
+        <div class="portfolio-item">
+          <img src="images/project1.jpg" alt="פרויקט 1">
+          <h3>פרויקט 1</h3>
         </div>
-    </section>
+        <div class="portfolio-item">
+          <img src="images/project2.jpg" alt="פרויקט 2">
+          <h3>פרויקט 2</h3>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/project3.jpg" alt="פרויקט 3">
+          <h3>פרויקט 3</h3>
+        </div>
+        <!-- אפשר להוסיף עוד פרויקטים -->
+      </div>
+    </div>
+  </section>
 
-    <!-- CUSTOMIZATION SECTION -->
-    <section id="customization" class="customization">
-        <div class="container">
-            <h2>התאמה אישית</h2>
-            <p>בסטודיו פריד תוכלו לעצב מוצר שמותאם בדיוק לטעמכם, כולל בחירת חומרים, צבעים וגדלים.</p>
-            <a href="#contact" class="btn">דברו איתנו</a>
-        </div>
-    </section>
+  <!-- סקשן יצירת קשר (Contact) -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>צור קשר</h2>
+      <p>נשמח לשמוע ממך. אפשר למלא את הטופס או להתקשר ישירות:</p>
+      <div class="contact-info">
+        <p>טלפון: <a href="tel:050-1234567">050-1234567</a></p>
+        <p>דוא"ל: <a href="mailto:info@studio.co.il">info@studio.co.il</a></p>
+      </div>
+      <form>
+        <label for="name">שם מלא:</label>
+        <input type="text" id="name" name="name" required>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>צרו קשר</h2>
-            <form action="mailto:Frydstudio360@gmail.com" method="post">
-                <input type="text" name="name" placeholder="שם מלא" required>
-                <input type="email" name="email" placeholder="אימייל" required>
-                <textarea name="message" placeholder="הודעה" required></textarea>
-                <button type="submit">שלח</button>
-            </form>
-        </div>
-    </section>
+        <label for="email">אימייל:</label>
+        <input type="email" id="email" name="email" required>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 סטודיו פריד. כל הזכויות שמורות.</p>
-        </div>
-    </footer>
+        <label for="message">הודעה:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">שלח</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- כותרת תחתונה -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>© 2024 - שם הסטודיו. כל הזכויות שמורות.</p>
+    </div>
+  </footer>
+
+  <!-- קובץ JS (אופציונלי) -->
+  <script src="js/main.js"></script>
 </body>
 </html>
