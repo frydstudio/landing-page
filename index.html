@@ -9,7 +9,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap');
         body {
-            font-family: 'Heebo';
+            font-family: 'Heebo', sans-serif;
             margin: 0;
             padding: 0;
             direction: rtl;
@@ -58,36 +58,7 @@
             margin-bottom: 20px;
             color: #2F6376;
         }
-        .about-section {
-            position: relative;
-            max-height: 150px;
-            overflow: hidden;
-            text-align: center;
-        }
-        .about-section::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 50px;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f9f9f9);
-        }
-        .read-more-btn {
-            margin-top: 20px;
-            display: inline-block;
-            background-color: #F09415;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .read-more-btn:hover {
-            background-color: #d97d10;
-        }
-        .services, .gallery, .testimonials, .catalog {
+        .gallery, .testimonials {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
@@ -102,6 +73,11 @@
         }
         .card:hover {
             transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
         .catalog-button {
             display: inline-block;
@@ -131,78 +107,6 @@
         footer a:hover {
             text-decoration: underline;
         }
-        .chat-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #F09415;
-            color: white;
-            padding: 15px;
-            border-radius: 50%;
-            font-size: 1.5em;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 60px;
-            height: 60px;
-        }
-        .chat-widget:hover {
-            background-color: #d97d10;
-        }
-        .chat-box {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            width: 300px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        .chat-box header {
-            background-color: #F09415;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-            position: relative;
-        }
-        .chat-box .close-chat {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            background: none;
-            border: none;
-            color: #000000;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
-        .chat-box form {
-            padding: 15px;
-        }
-        .chat-box input, .chat-box textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .chat-box button {
-            width: 100%;
-            background-color: #F09415;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .chat-box button:hover {
-            background-color: #d97d10;
-        }
     </style>
 </head>
 <body>
@@ -224,15 +128,16 @@
     <div class="about-section" id="about-section">
         <p>
             סטודיו פריד מתמחה ביצירת עיצובים חדשניים וייחודיים שמשלבים יצירתיות עם טכנולוגיה מתקדמת.
-המוצרים שלנו תוכננו להציע שילוב מושלם בין אסתטיקה ופונקציונליות, ומיועדים לתת מענה לצרכים המגוונים של הלקוחות שלנו.
-
-            
-כל פרויקט מתחיל בהקשבה והבנה מעמיקה של החזון שלך,
-ומסתיים במוצרים מרהיבים המותאמים לדרישה.
-עם דגש על איכות, דיוק ותשומת לב לפרטים הקטנים.
-אנו מוודאים שכל פריט שאנחנו יוצרים מטופל באופן מושלם.        </p>
+            המוצרים שלנו תוכננו להציע שילוב מושלם בין אסתטיקה ופונקציונליות, ומיועדים לתת מענה לצרכים המגוונים של הלקוחות שלנו.
+            כל פרויקט מתחיל בהקשבה והבנה מעמיקה של החזון שלך, ומסתיים במוצרים מרהיבים המותאמים לדרישה.
+        </p>
     </div>
     <button class="read-more-btn" id="read-more-btn" onclick="toggleAbout()">המשך קריאה</button>
+</section>
+
+<section id="catalog" class="catalog">
+    <h2>קטלוג 2025</h2>
+    <a href="catalog2025.pdf" class="catalog-button" download>להורדה לחץ כאן</a>
 </section>
 
 <section id="services" class="services">
@@ -251,6 +156,28 @@
     </div>
 </section>
 
+<section id="gallery" class="gallery">
+    <h2>גלריה</h2>
+    <div class="card">
+        <img src="product1.jpg" alt="מוצר 1">
+    </div>
+    <div class="card">
+        <img src="product2.jpg" alt="מוצר 2">
+    </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+    <h2>לקוחות ממליצים</h2>
+    <div class="card">
+        <p>"חוויה מדהימה! המוצרים של סטודיו פריד שדרגו את הבית שלי!"</p>
+        <h3>איילת</h3>
+    </div>
+    <div class="card">
+        <p>"עבודה מקצועית, חדשנית, ויחס אישי לאורך כל הדרך. מומלץ בחום!"</p>
+        <h3>יוסי</h3>
+    </div>
+</section>
+
 <footer>
     <p>&copy; 2024 FRYD STUDIO</p>
     <p>
@@ -259,25 +186,7 @@
     </p>
 </footer>
 
-<div class="chat-widget" onclick="toggleChat()">💬</div>
-<div class="chat-box" id="chatBox">
-    <header>
-        השאר פרטים ונחזור אליך
-        <button class="close-chat" onclick="toggleChat()">X</button>
-    </header>
-    <form>
-        <input type="text" name="name" placeholder="שם מלא" required>
-        <input type="email" name="email" placeholder="אימייל" required>
-        <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
-        <button type="submit">שלח</button>
-    </form>
-</div>
-
 <script>
-    function toggleChat() {
-        const chatBox = document.getElementById('chatBox');
-        chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
-    }
     function toggleAbout() {
         const aboutSection = document.getElementById('about-section');
         const readMoreBtn = document.getElementById('read-more-btn');
