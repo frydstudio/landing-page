@@ -9,7 +9,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap');
         body {
-            font-family: 'Heebo', sans-serif;
+            font-family: 'Heebo';
             margin: 0;
             padding: 0;
             direction: rtl;
@@ -24,12 +24,12 @@
         }
         header h1 {
             font-size: 3em;
-            font-weight: 700; /* Bold */
+            font-weight: 700;
             margin: 0;
         }
         header p {
             font-size: 1.2em;
-            font-weight: 400; /* Regular */
+            font-weight: 400;
             margin: 5px 0 0;
         }
         nav {
@@ -43,7 +43,7 @@
             margin: 0 15px;
             color: #FFFFFF;
             text-decoration: none;
-            font-weight: 300; /* Light */
+            font-weight: 300;
             font-size: 1.1em;
         }
         nav a:hover {
@@ -60,7 +60,7 @@
         }
         .about-section {
             position: relative;
-            max-height: 150px; /* Approx. 3 lines */
+            max-height: 150px;
             overflow: hidden;
             text-align: center;
         }
@@ -86,6 +86,50 @@
         }
         .read-more-btn:hover {
             background-color: #d97d10;
+        }
+        .services, .gallery, .testimonials, .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .catalog-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #F09415;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .catalog-button:hover {
+            background-color: #d97d10;
+        }
+        footer {
+            background-color: #282c34;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #F09415;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
         .chat-widget {
             position: fixed;
