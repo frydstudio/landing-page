@@ -17,8 +17,8 @@
             color: #333;
         }
         header {
-            background-color: #F09415;
-            color: #FFFFFF;
+            background: linear-gradient(to right, #2F6376, #93BDCC);
+            color: white;
             padding: 40px 20px;
             text-align: center;
         }
@@ -52,7 +52,52 @@
         section h2 {
             font-size: 2.5em;
             margin-bottom: 20px;
+            color: #2F6376;
+        }
+        .services, .gallery, .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h3 {
+            color: #2F6376;
+            margin: 10px 0;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .catalog-section {
+            background-color: #F09415;
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .catalog-section button {
+            margin-top: 20px;
+            background-color: #FFFFFF;
             color: #F09415;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .catalog-section button:hover {
+            background-color: #d97d10;
+            color: #FFFFFF;
         }
         footer {
             background-color: #282c34;
@@ -91,29 +136,53 @@
     <p>סטודיו פריד מוביל את עולם העיצוב עם טכנולוגיות מתקדמות, תוך התמקדות ביצירת עיצובים מותאמים אישית ברמה הגבוהה ביותר.</p>
 </section>
 
-<section id="services">
+<section id="services" class="services">
     <h2>השירותים שלנו</h2>
-    <!-- תוכן נוסף יכול להיות כאן -->
+    <div class="card">
+        <h3>עיצובים בהתאמה אישית</h3>
+        <p>עיצובים ייחודיים לפי דרישות הלקוח.</p>
+    </div>
+    <div class="card">
+        <h3>מוצרים קיימים</h3>
+        <p>מגוון מוצרים מעוצבים שזמינים להזמנה מידית.</p>
+    </div>
+    <div class="card">
+        <h3>בקרוב... סדנאות יצירה</h3>
+        <p>למדו ליצור פריטים ייחודיים בסדנאות יצירה מקצועיות.</p>
+    </div>
 </section>
 
-<section id="gallery">
+<section id="gallery" class="gallery">
     <h2>גלריה</h2>
-    <!-- תמונות בגלריה -->
+    <div class="card">
+        <img src="product1.jpg" alt="מוצר 1">
+    </div>
+    <div class="card">
+        <img src="product2.jpg" alt="מוצר 2">
+    </div>
 </section>
 
-<section id="testimonials">
+<section id="testimonials" class="testimonials">
     <h2>לקוחות ממליצים</h2>
-    <!-- עדויות לקוחות -->
+    <div class="card">
+        <p>"חוויה מדהימה! המוצרים של סטודיו פריד שדרגו את הבית שלי!"</p>
+        <h3>איילת</h3>
+    </div>
+    <div class="card">
+        <p>"עבודה מקצועית, חדשנית, ויחס אישי לאורך כל הדרך. מומלץ בחום!"</p>
+        <h3>יוסי</h3>
+    </div>
 </section>
 
-<section id="catalog">
+<section id="catalog" class="catalog-section">
     <h2>קטלוג 2025</h2>
+    <p>לחצו על הכפתור למטה להורדת הקטלוג החדש שלנו ולהתרשמות מהמוצרים המובילים!</p>
     <button onclick="window.location.href='catalog2025.pdf'">הורד קטלוג</button>
 </section>
 
 <section id="contact">
     <h2>צור קשר</h2>
-    <form action="#" method="POST">
+    <form class="contact-form" action="#" method="POST">
         <input type="text" name="name" placeholder="שם מלא" required>
         <input type="email" name="email" placeholder="אימייל" required>
         <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
