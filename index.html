@@ -58,74 +58,43 @@
             margin-bottom: 20px;
             color: #2F6376;
         }
-        .gallery, .testimonials, .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+        .carousel-container {
+            position: relative;
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
         }
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: transform 0.3s ease;
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
         }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .card img {
-            width: 100%;
+        .carousel img {
+            min-width: 100%;
             height: auto;
             border-radius: 10px;
         }
-        .about-section {
-            position: relative;
-            max-height: 150px; /* Approx. 3 lines */
-            overflow: hidden;
-            text-align: center;
-            transition: max-height 0.5s ease;
+        .carousel img:not(:last-child) {
+            margin-right: 15px;
         }
-        .about-section::after {
-            content: "";
+        .carousel-navigation {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 50px;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f9f9f9);
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
         }
-        .read-more-btn {
-            margin-top: 20px;
-            display: inline-block;
-            background-color: #F09415;
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
-            padding: 10px 20px;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .read-more-btn:hover {
-            background-color: #d97d10;
-        }
-        .catalog {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .catalog-button {
-            display: inline-block;
             padding: 10px 20px;
-            background-color: #F09415;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.5em;
         }
-        .catalog-button:hover {
-            background-color: #d97d10;
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
         footer {
             background-color: #282c34;
@@ -140,78 +109,6 @@
         }
         footer a:hover {
             text-decoration: underline;
-        }
-        .chat-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #F09415;
-            color: white;
-            padding: 15px;
-            border-radius: 50%;
-            font-size: 1.5em;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 60px;
-            height: 60px;
-        }
-        .chat-widget:hover {
-            background-color: #d97d10;
-        }
-        .chat-box {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            width: 300px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        .chat-box header {
-            background-color: #F09415;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-            position: relative;
-        }
-        .chat-box .close-chat {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            background: none;
-            border: none;
-            color: #000000;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
-        .chat-box form {
-            padding: 15px;
-        }
-        .chat-box input, .chat-box textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .chat-box button {
-            width: 100%;
-            background-color: #F09415;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .chat-box button:hover {
-            background-color: #d97d10;
         }
     </style>
 </head>
@@ -229,58 +126,23 @@
     <a href="#testimonials">לקוחות ממליצים</a>
 </nav>
 
-<section id="about">
-    <h2>מי אנחנו?</h2>
-    <div class="about-section" id="about-section">
-        <p>
-            סטודיו פריד מתמחה ביצירת עיצובים חדשניים וייחודיים שמשלבים יצירתיות עם טכנולוגיה מתקדמת.
-            המוצרים שלנו תוכננו להציע שילוב מושלם בין אסתטיקה ופונקציונליות, ומיועדים לתת מענה לצרכים המגוונים של הלקוחות שלנו.
-            כל פרויקט מתחיל בהקשבה והבנה מעמיקה של החזון שלך, ומסתיים במוצרים מרהיבים המותאמים לדרישה.
-        </p>
-    </div>
-    <button class="read-more-btn" id="read-more-btn" onclick="toggleAbout()">המשך קריאה</button>
-</section>
-
-<section id="catalog" class="catalog">
-    <h2>קטלוג 2025</h2>
-    <a href="catalog2025.pdf" class="catalog-button" download>להורדה לחץ כאן</a>
-</section>
-
-<section id="services" class="services">
-    <h2>השירותים שלנו</h2>
-    <div class="card">
-        <h3>עיצובים בהתאמה אישית</h3>
-        <p>עיצובים ייחודיים לפי דרישות הלקוח.</p>
-    </div>
-    <div class="card">
-        <h3>מוצרים קיימים</h3>
-        <p>מגוון מוצרים מעוצבים שזמינים להזמנה מידית.</p>
-    </div>
-    <div class="card">
-        <h3>בקרוב... סדנאות יצירה</h3>
-        <p>למדו ליצור פריטים ייחודיים בסדנאות יצירה מקצועיות.</p>
-    </div>
-</section>
-
-<section id="gallery" class="gallery">
+<section id="gallery">
     <h2>גלריה</h2>
-    <div class="card">
-        <img src="product1.jpg" alt="מוצר 1">
-    </div>
-    <div class="card">
-        <img src="product2.jpg" alt="מוצר 2">
-    </div>
-</section>
-
-<section id="testimonials" class="testimonials">
-    <h2>לקוחות ממליצים</h2>
-    <div class="card">
-        <p>"חוויה מדהימה! המוצרים של סטודיו פריד שדרגו את הבית שלי!"</p>
-        <h3>איילת</h3>
-    </div>
-    <div class="card">
-        <p>"עבודה מקצועית, חדשנית, ויחס אישי לאורך כל הדרך. מומלץ בחום!"</p>
-        <h3>יוסי</h3>
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <img src="product1.jpg" alt="מוצר 1">
+            <img src="product2.jpg" alt="מוצר 2">
+            <img src="product3.jpg" alt="מוצר 3">
+            <img src="product4.jpg" alt="מוצר 4">
+            <img src="product5.jpg" alt="מוצר 5">
+            <img src="product6.jpg" alt="מוצר 6">
+            <img src="product7.jpg" alt="מוצר 7">
+            <img src="product8.jpg" alt="מוצר 8">
+        </div>
+        <div class="carousel-navigation">
+            <button class="carousel-button" id="prev">&#8249;</button>
+            <button class="carousel-button" id="next">&#8250;</button>
+        </div>
     </div>
 </section>
 
@@ -292,38 +154,28 @@
     </p>
 </footer>
 
-<div class="chat-widget" onclick="toggleChat()">💬</div>
-<div class="chat-box" id="chatBox">
-    <header>
-        השאר פרטים ונחזור אליך
-        <button class="close-chat" onclick="toggleChat()">X</button>
-    </header>
-    <form>
-        <input type="text" name="name" placeholder="שם מלא" required>
-        <input type="email" name="email" placeholder="אימייל" required>
-        <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
-        <button type="submit">שלח</button>
-    </form>
-</div>
-
 <script>
-    function toggleChat() {
-        const chatBox = document.getElementById('chatBox');
-        chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+    const carousel = document.getElementById('carousel');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let offset = 0;
+
+    function updateCarousel() {
+        carousel.style.transform = `translateX(${offset}px)`;
     }
-    function toggleAbout() {
-        const aboutSection = document.getElementById('about-section');
-        const readMoreBtn = document.getElementById('read-more-btn');
-        if (aboutSection.style.maxHeight === 'none') {
-            aboutSection.style.maxHeight = '150px';
-            aboutSection.classList.add('about-section');
-            readMoreBtn.innerHTML = 'המשך קריאה';
-        } else {
-            aboutSection.style.maxHeight = 'none';
-            aboutSection.classList.remove('about-section');
-            readMoreBtn.innerHTML = 'סגור טקסט';
-        }
-    }
+
+    nextButton.addEventListener('click', () => {
+        const maxOffset = -(carousel.scrollWidth - carousel.offsetWidth);
+        offset -= carousel.offsetWidth;
+        if (offset < maxOffset) offset = 0; // Reset to start
+        updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+        offset += carousel.offsetWidth;
+        if (offset > 0) offset = -(carousel.scrollWidth - carousel.offsetWidth); // Reset to end
+        updateCarousel();
+    });
 </script>
 
 </body>
