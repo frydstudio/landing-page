@@ -14,7 +14,7 @@
             padding: 0;
             direction: rtl;
             background-color: #f9f9f9;
-            color: #333;
+            color: #33302B;
         }
         header {
             background: linear-gradient(to right, #2F6376, #93BDCC);
@@ -54,7 +54,7 @@
             margin-bottom: 20px;
             color: #2F6376;
         }
-        .services, .gallery, .testimonials {
+        .services, .gallery, .testimonials, .catalog {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
@@ -78,27 +78,6 @@
             width: 100%;
             border-radius: 10px;
         }
-        .catalog-section {
-            background-color: #F09415;
-            color: #FFFFFF;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .catalog-section button {
-            margin-top: 20px;
-            background-color: #FFFFFF;
-            color: #F09415;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .catalog-section button:hover {
-            background-color: #d97d10;
-            color: #FFFFFF;
-        }
         footer {
             background-color: #282c34;
             color: white;
@@ -112,6 +91,65 @@
         }
         footer a:hover {
             text-decoration: underline;
+        }
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #F09415;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .chat-widget:hover {
+            background-color: #d97d10;
+        }
+        .chat-box {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .chat-box header {
+            background-color: #F09415;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .chat-box form {
+            padding: 15px;
+        }
+        .chat-box input, .chat-box textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .chat-box button {
+            width: 100%;
+            background-color: #F09415;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .chat-box button:hover {
+            background-color: #d97d10;
         }
     </style>
 </head>
@@ -128,7 +166,6 @@
     <a href="#gallery">גלריה</a>
     <a href="#testimonials">לקוחות ממליצים</a>
     <a href="#catalog">קטלוג 2025</a>
-    <a href="#contact">צור קשר</a>
 </nav>
 
 <section id="about">
@@ -152,6 +189,14 @@
     </div>
 </section>
 
+<section id="catalog" class="catalog">
+    <h2>קטלוג 2025</h2>
+    <div class="card">
+        <h3>להורדה לחץ כאן</h3>
+        <button onclick="window.location.href='catalog2025.pdf'">הורד קטלוג</button>
+    </div>
+</section>
+
 <section id="gallery" class="gallery">
     <h2>גלריה</h2>
     <div class="card">
@@ -162,34 +207,6 @@
     </div>
 </section>
 
-<section id="testimonials" class="testimonials">
-    <h2>לקוחות ממליצים</h2>
-    <div class="card">
-        <p>"חוויה מדהימה! המוצרים של סטודיו פריד שדרגו את הבית שלי!"</p>
-        <h3>איילת</h3>
-    </div>
-    <div class="card">
-        <p>"עבודה מקצועית, חדשנית, ויחס אישי לאורך כל הדרך. מומלץ בחום!"</p>
-        <h3>יוסי</h3>
-    </div>
-</section>
-
-<section id="catalog" class="catalog-section">
-    <h2>קטלוג 2025</h2>
-    <p>לחצו על הכפתור למטה להורדת הקטלוג החדש שלנו ולהתרשמות מהמוצרים המובילים!</p>
-    <button onclick="window.location.href='catalog2025.pdf'">הורד קטלוג</button>
-</section>
-
-<section id="contact">
-    <h2>צור קשר</h2>
-    <form class="contact-form" action="#" method="POST">
-        <input type="text" name="name" placeholder="שם מלא" required>
-        <input type="email" name="email" placeholder="אימייל" required>
-        <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
-        <button type="submit">שלח</button>
-    </form>
-</section>
-
 <footer>
     <p>&copy; 2024 סטודיו פריד</p>
     <p>
@@ -197,6 +214,24 @@
         <a href="https://www.instagram.com/fryd__studio/" target="_blank">אינסטגרם</a>
     </p>
 </footer>
+
+<div class="chat-widget" onclick="toggleChat()">💬</div>
+<div class="chat-box" id="chatBox">
+    <header>השאר פרטים ונחזור אליך</header>
+    <form>
+        <input type="text" name="name" placeholder="שם מלא" required>
+        <input type="email" name="email" placeholder="אימייל" required>
+        <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
+        <button type="submit">שלח</button>
+    </form>
+</div>
+
+<script>
+    function toggleChat() {
+        const chatBox = document.getElementById('chatBox');
+        chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+    }
+</script>
 
 </body>
 </html>
