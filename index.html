@@ -97,7 +97,36 @@
             background-color: rgba(0, 0, 0, 0.8);
         }
         .card, .testimonials, .services, .catalog, footer {
-            /* שמירה על שאר הסגנונות */
+            /* שמירה על שאר הסגנונות הקיימים */
+        }
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #F09415;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 60px;
+            height: 60px;
+        }
+        .chat-box {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -183,44 +212,47 @@
     </p>
 </footer>
 
+<div class="chat-widget" onclick="toggleChat()">💬</div>
+<div class="chat-box" id="chatBox">
+    <header>
+        השאר פרטים ונחזור אליך
+        <button class="close-chat" onclick="toggleChat()">X</button>
+    </header>
+    <form>
+        <input type="text" name="name" placeholder="שם מלא" required>
+        <input type="email" name="email" placeholder="אימייל" required>
+        <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
+        <button type="submit">שלח</button>
+    </form>
+</div>
+
 <script>
-    function toggleChat() {
-        const chatBox = document.getElementById('chatBox');
-        chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
-    }
-
-    function toggleAbout() {
-        const aboutSection = document.getElementById('about-section');
-        const readMoreBtn = document.getElementById('read-more-btn');
-        if (aboutSection.style.maxHeight === 'none') {
-            aboutSection.style.maxHeight = '150px';
-            aboutSection.classList.add('about-section');
-            readMoreBtn.innerHTML = 'המשך קריאה';
-        } else {
-            aboutSection.style.maxHeight = 'none';
-            aboutSection.classList.remove('about-section');
-            readMoreBtn.innerHTML = 'סגור טקסט';
-        }
-    }
-
     const carousel = document.getElementById('carousel');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
-    let offset = 0;
+    let currentSlide = 0;
 
     function updateCarousel() {
-        const slideWidth = carousel.children[0].offsetWidth + 20; // כולל מרווח
-        offset -= slideWidth;
-        const maxOffset = -(carousel.offsetWidth + slideWidth);
-        if (offset < maxOffset) offset = 0; // חזור להתחלה
-        carousel.style.transform = `translateX(${offset}px)`;
+        const slideWidth = carousel.children[0].offsetWidth + 20; // כולל מרווחים
+        carousel.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
     }
 
-    nextButton.addEventListener('click', updateCarousel);
+    nextButton.addEventListener('click', () => {
+        if (currentSlide < carousel.children.length - 1) {
+            currentSlide++;
+        } else {
+            currentSlide = 0; // חזור להתחלה
+        }
+        updateCarousel();
+    });
+
     prevButton.addEventListener('click', () => {
-        offset += carousel.children[0].offsetWidth + 20;
-        if (offset > 0) offset = 0;
-        carousel.style.transform = `translateX(${offset}px)`;
+        if (currentSlide > 0) {
+            currentSlide--;
+        } else {
+            currentSlide = carousel.children.length - 1; // חזור לסוף
+        }
+        updateCarousel();
     });
 </script>
 
