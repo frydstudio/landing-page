@@ -128,6 +128,17 @@
             padding: 10px;
             text-align: center;
             font-weight: bold;
+            position: relative;
+        }
+        .chat-box .close-chat {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
         }
         .chat-box form {
             padding: 15px;
@@ -165,12 +176,19 @@
     <a href="#services">שירותים</a>
     <a href="#gallery">גלריה</a>
     <a href="#testimonials">לקוחות ממליצים</a>
-    <a href="#catalog">קטלוג 2025</a>
 </nav>
 
 <section id="about">
     <h2>מי אנחנו?</h2>
     <p>סטודיו פריד מוביל את עולם העיצוב עם טכנולוגיות מתקדמות, תוך התמקדות ביצירת עיצובים מותאמים אישית ברמה הגבוהה ביותר.</p>
+</section>
+
+<section id="catalog" class="catalog">
+    <h2>קטלוג 2025</h2>
+    <div class="card">
+        <h3>להורדה לחץ כאן</h3>
+        <button onclick="window.location.href='catalog2025.pdf'">הורד קטלוג</button>
+    </div>
 </section>
 
 <section id="services" class="services">
@@ -186,14 +204,6 @@
     <div class="card">
         <h3>בקרוב... סדנאות יצירה</h3>
         <p>למדו ליצור פריטים ייחודיים בסדנאות יצירה מקצועיות.</p>
-    </div>
-</section>
-
-<section id="catalog" class="catalog">
-    <h2>קטלוג 2025</h2>
-    <div class="card">
-        <h3>להורדה לחץ כאן</h3>
-        <button onclick="window.location.href='catalog2025.pdf'">הורד קטלוג</button>
     </div>
 </section>
 
@@ -217,7 +227,10 @@
 
 <div class="chat-widget" onclick="toggleChat()">💬</div>
 <div class="chat-box" id="chatBox">
-    <header>השאר פרטים ונחזור אליך</header>
+    <header>
+        השאר פרטים ונחזור אליך
+        <button class="close-chat" onclick="toggleChat()">X</button>
+    </header>
     <form>
         <input type="text" name="name" placeholder="שם מלא" required>
         <input type="email" name="email" placeholder="אימייל" required>
