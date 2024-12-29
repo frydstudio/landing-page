@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="סטודיו פריד - עיצובים ייחודיים המשלבים יצירתיות וטכנולוגיה מתקדמת">
     <meta name="keywords" content="עיצוב, סטודיו פריד, טכנולוגיה מתקדמת, עיצוב בהתאמה אישית, סדנאות יצירה">
-    <title>סטודיו פריד - יצירתיות פוגשת טכנולוגיה</title>
+    <title>FRYD STUDIO</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
         body {
@@ -27,7 +27,9 @@
             font-size: 3em;
         }
         header p {
+            margin: 10px 0 0;
             font-size: 1.2em;
+            font-style: italic;
         }
         nav {
             display: flex;
@@ -70,13 +72,13 @@
         .card:hover {
             transform: scale(1.05);
         }
-        .card h3 {
-            color: #2F6376;
-            margin: 10px 0;
-        }
-        .card img {
-            width: 100%;
-            border-radius: 10px;
+        .read-more {
+            color: #F09415;
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
         }
         footer {
             background-color: #282c34;
@@ -106,6 +108,8 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 60px;
+            height: 60px;
         }
         .chat-widget:hover {
             background-color: #d97d10;
@@ -136,7 +140,7 @@
             top: 10px;
             background: none;
             border: none;
-            color: white;
+            color: #000000;
             font-size: 1.2em;
             cursor: pointer;
         }
@@ -167,8 +171,8 @@
 <body>
 
 <header>
-    <h1>סטודיו פריד</h1>
-    <p>עיצוב חדשני שמשלב יצירתיות וטכנולוגיה מתקדמת</p>
+    <h1>FRYD STUDIO</h1>
+    <p>Creativity meets technology</p>
 </header>
 
 <nav>
@@ -180,7 +184,17 @@
 
 <section id="about">
     <h2>מי אנחנו?</h2>
-    <p>סטודיו פריד מוביל את עולם העיצוב עם טכנולוגיות מתקדמות, תוך התמקדות ביצירת עיצובים מותאמים אישית ברמה הגבוהה ביותר.</p>
+    <p id="about-short">
+        סטודיו פריד מתמחה ביצירת עיצובים חדשניים וייחודיים שמשלבים יצירתיות עם טכנולוגיה מתקדמת.
+        המוצרים שלנו תוכננו להציע שילוב מושלם בין אסתטיקה ופונקציונליות, ומיועדים לתת מענה לצרכים המגוונים של הלקוחות שלנו.
+    </p>
+    <p id="about-full" style="display: none;">
+        כל פרויקט מתחיל בהקשבה והבנה מעמיקה של החזון שלך,
+        ומסתיים במוצרים מרהיבים המותאמים לדרישה.
+        עם דגש על איכות, דיוק ותשומת לב לפרטים הקטנים.
+        אנו מוודאים שכל פריט שאנחנו יוצרים מטופל באופן מושלם.
+    </p>
+    <span class="read-more" onclick="toggleAbout()">המשך קריאה</span>
 </section>
 
 <section id="catalog" class="catalog">
@@ -207,18 +221,8 @@
     </div>
 </section>
 
-<section id="gallery" class="gallery">
-    <h2>גלריה</h2>
-    <div class="card">
-        <img src="product1.jpg" alt="מוצר 1">
-    </div>
-    <div class="card">
-        <img src="product2.jpg" alt="מוצר 2">
-    </div>
-</section>
-
 <footer>
-    <p>&copy; 2024 סטודיו פריד</p>
+    <p>&copy; 2024 FRYD STUDIO</p>
     <p>
         <a href="https://www.facebook.com/profile.php?id=61567142757395&locale=he_IL" target="_blank">פייסבוק</a> |
         <a href="https://www.instagram.com/fryd__studio/" target="_blank">אינסטגרם</a>
@@ -243,6 +247,13 @@
     function toggleChat() {
         const chatBox = document.getElementById('chatBox');
         chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+    }
+    function toggleAbout() {
+        const shortText = document.getElementById('about-short');
+        const fullText = document.getElementById('about-full');
+        const isExpanded = fullText.style.display === 'block';
+        fullText.style.display = isExpanded ? 'none' : 'block';
+        shortText.style.display = isExpanded ? 'block' : 'none';
     }
 </script>
 
