@@ -58,46 +58,88 @@
             margin-bottom: 20px;
             color: #2F6376;
         }
-        .gallery {
-            position: relative;
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+        .gallery, .testimonials, .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
         }
-        .carousel img {
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
             width: 100%;
             height: auto;
-            min-width: 300px;
-            max-width: 400px;
-            margin: 0 10px;
             border-radius: 10px;
         }
-        .carousel-navigation {
+        .about-section {
+            position: relative;
+            max-height: 150px; /* Approx. 3 lines */
+            overflow: hidden;
+            text-align: center;
+            transition: max-height 0.5s ease;
+        }
+        .about-section::after {
+            content: "";
             position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f9f9f9);
         }
-        .carousel-button {
-            background-color: rgba(0, 0, 0, 0.5);
+        .read-more-btn {
+            margin-top: 20px;
+            display: inline-block;
+            background-color: #F09415;
             color: white;
-            border: none;
             padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
-            border-radius: 50%;
-            font-size: 1.5em;
+            font-weight: bold;
         }
-        .carousel-button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+        .read-more-btn:hover {
+            background-color: #d97d10;
         }
-        .card, .testimonials, .services, .catalog, footer {
-            /* שמירה על שאר הסגנונות הקיימים */
+        .catalog {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .catalog-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #F09415;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .catalog-button:hover {
+            background-color: #d97d10;
+        }
+        footer {
+            background-color: #282c34;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #F09415;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
         .chat-widget {
             position: fixed;
@@ -116,6 +158,9 @@
             width: 60px;
             height: 60px;
         }
+        .chat-widget:hover {
+            background-color: #d97d10;
+        }
         .chat-box {
             position: fixed;
             bottom: 80px;
@@ -127,6 +172,46 @@
             display: none;
             flex-direction: column;
             overflow: hidden;
+        }
+        .chat-box header {
+            background-color: #F09415;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            position: relative;
+        }
+        .chat-box .close-chat {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background: none;
+            border: none;
+            color: #000000;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        .chat-box form {
+            padding: 15px;
+        }
+        .chat-box input, .chat-box textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .chat-box button {
+            width: 100%;
+            background-color: #F09415;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .chat-box button:hover {
+            background-color: #d97d10;
         }
     </style>
 </head>
@@ -156,24 +241,9 @@
     <button class="read-more-btn" id="read-more-btn" onclick="toggleAbout()">המשך קריאה</button>
 </section>
 
-<section id="gallery">
-    <h2>גלריה</h2>
-    <div class="gallery">
-        <div class="carousel" id="carousel">
-            <img src="product1.jpg" alt="מוצר 1">
-            <img src="product2.jpg" alt="מוצר 2">
-            <img src="product3.jpg" alt="מוצר 3">
-            <img src="product4.jpg" alt="מוצר 4">
-            <img src="product5.jpg" alt="מוצר 5">
-            <img src="product6.jpg" alt="מוצר 6">
-            <img src="product7.jpg" alt="מוצר 7">
-            <img src="product8.jpg" alt="מוצר 8">
-        </div>
-        <div class="carousel-navigation">
-            <button class="carousel-button" id="prev">&#8249;</button>
-            <button class="carousel-button" id="next">&#8250;</button>
-        </div>
-    </div>
+<section id="catalog" class="catalog">
+    <h2>קטלוג 2025</h2>
+    <a href="catalog2025.pdf" class="catalog-button" download>להורדה לחץ כאן</a>
 </section>
 
 <section id="services" class="services">
@@ -189,6 +259,16 @@
     <div class="card">
         <h3>בקרוב... סדנאות יצירה</h3>
         <p>למדו ליצור פריטים ייחודיים בסדנאות יצירה מקצועיות.</p>
+    </div>
+</section>
+
+<section id="gallery" class="gallery">
+    <h2>גלריה</h2>
+    <div class="card">
+        <img src="product1.jpg" alt="מוצר 1">
+    </div>
+    <div class="card">
+        <img src="product2.jpg" alt="מוצר 2">
     </div>
 </section>
 
@@ -227,33 +307,23 @@
 </div>
 
 <script>
-    const carousel = document.getElementById('carousel');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
-    let currentSlide = 0;
-
-    function updateCarousel() {
-        const slideWidth = carousel.children[0].offsetWidth + 20; // כולל מרווחים
-        carousel.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+    function toggleChat() {
+        const chatBox = document.getElementById('chatBox');
+        chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
     }
-
-    nextButton.addEventListener('click', () => {
-        if (currentSlide < carousel.children.length - 1) {
-            currentSlide++;
+    function toggleAbout() {
+        const aboutSection = document.getElementById('about-section');
+        const readMoreBtn = document.getElementById('read-more-btn');
+        if (aboutSection.style.maxHeight === 'none') {
+            aboutSection.style.maxHeight = '150px';
+            aboutSection.classList.add('about-section');
+            readMoreBtn.innerHTML = 'המשך קריאה';
         } else {
-            currentSlide = 0; // חזור להתחלה
+            aboutSection.style.maxHeight = 'none';
+            aboutSection.classList.remove('about-section');
+            readMoreBtn.innerHTML = 'סגור טקסט';
         }
-        updateCarousel();
-    });
-
-    prevButton.addEventListener('click', () => {
-        if (currentSlide > 0) {
-            currentSlide--;
-        } else {
-            currentSlide = carousel.children.length - 1; // חזור לסוף
-        }
-        updateCarousel();
-    });
+    }
 </script>
 
 </body>
