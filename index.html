@@ -7,7 +7,7 @@
     <meta name="keywords" content="עיצוב, סטודיו פריד, טכנולוגיה מתקדמת, עיצוב בהתאמה אישית, סדנאות יצירה">
     <title>FRYD STUDIO</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap');
         body {
             font-family: 'Heebo', sans-serif;
             margin: 0;
@@ -19,29 +19,32 @@
         header {
             background: linear-gradient(to right, #2F6376, #93BDCC);
             color: white;
-            padding: 40px 20px;
+            padding: 20px 20px 10px;
             text-align: center;
         }
         header h1 {
             margin: 0;
             font-size: 3em;
+            font-weight: 700;
         }
         header p {
-            margin: 10px 0 0;
+            margin: 5px 0 0;
             font-size: 1.2em;
+            font-weight: 300;
             font-style: italic;
         }
         nav {
             display: flex;
             justify-content: center;
-            padding: 15px;
+            padding: 10px 0;
             background-color: #F09415;
+            text-align: center;
         }
         nav a {
             margin: 0 15px;
             color: #FFFFFF;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 300;
             font-size: 1.1em;
         }
         nav a:hover {
@@ -72,6 +75,20 @@
         .card:hover {
             transform: scale(1.05);
         }
+        .catalog-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #F09415;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .catalog-button:hover {
+            background-color: #d97d10;
+        }
         .read-more {
             color: #F09415;
             cursor: pointer;
@@ -93,78 +110,6 @@
         }
         footer a:hover {
             text-decoration: underline;
-        }
-        .chat-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #F09415;
-            color: white;
-            padding: 15px;
-            border-radius: 50%;
-            font-size: 1.5em;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 60px;
-            height: 60px;
-        }
-        .chat-widget:hover {
-            background-color: #d97d10;
-        }
-        .chat-box {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            width: 300px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        .chat-box header {
-            background-color: #F09415;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-            position: relative;
-        }
-        .chat-box .close-chat {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            background: none;
-            border: none;
-            color: #000000;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
-        .chat-box form {
-            padding: 15px;
-        }
-        .chat-box input, .chat-box textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .chat-box button {
-            width: 100%;
-            background-color: #F09415;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .chat-box button:hover {
-            background-color: #d97d10;
         }
     </style>
 </head>
@@ -199,10 +144,7 @@
 
 <section id="catalog" class="catalog">
     <h2>קטלוג 2025</h2>
-    <div class="card">
-        <h3>להורדה לחץ כאן</h3>
-        <button onclick="window.location.href='catalog2025.pdf'">הורד קטלוג</button>
-    </div>
+    <a href="catalog2025.pdf" class="catalog-button" download>להורדה לחץ כאן</a>
 </section>
 
 <section id="services" class="services">
@@ -229,31 +171,16 @@
     </p>
 </footer>
 
-<div class="chat-widget" onclick="toggleChat()">💬</div>
-<div class="chat-box" id="chatBox">
-    <header>
-        השאר פרטים ונחזור אליך
-        <button class="close-chat" onclick="toggleChat()">X</button>
-    </header>
-    <form>
-        <input type="text" name="name" placeholder="שם מלא" required>
-        <input type="email" name="email" placeholder="אימייל" required>
-        <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
-        <button type="submit">שלח</button>
-    </form>
-</div>
-
 <script>
-    function toggleChat() {
-        const chatBox = document.getElementById('chatBox');
-        chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
-    }
     function toggleAbout() {
         const shortText = document.getElementById('about-short');
         const fullText = document.getElementById('about-full');
         const isExpanded = fullText.style.display === 'block';
         fullText.style.display = isExpanded ? 'none' : 'block';
         shortText.style.display = isExpanded ? 'block' : 'none';
+        if (!isExpanded) {
+            document.querySelector('.read-more').style.display = 'none';
+        }
     }
 </script>
 
