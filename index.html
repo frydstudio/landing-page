@@ -283,6 +283,22 @@
             color: #d97d10;
         }
 
+        /* כפתור הורדת הקטלוג מתוך ה-Popup */
+        .catalog-download-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #F09415;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .catalog-download-button:hover {
+            background-color: #d97d10;
+        }
+
         /* אופציונלי: למנוע גלילה כשהפופאפ על המסך */
         body.popup-open {
             overflow: hidden;
@@ -305,6 +321,10 @@
             <br>
             <button type="submit">הרשמה לניוזלטר</button>
         </form>
+        <!-- כפתור הורדת הקטלוג החדש -->
+        <a href="catalog2025.pdf" download class="catalog-download-button">
+            להורדת הקטלוג החדש
+        </a>
         <div class="social-icons">
             <a href="https://www.facebook.com/profile.php?id=61567142757395&locale=he_IL" target="_blank">Facebook</a>
             <a href="https://www.instagram.com/fryd__studio/" target="_blank">Instagram</a>
