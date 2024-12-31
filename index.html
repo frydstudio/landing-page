@@ -213,9 +213,101 @@
         .chat-box button:hover {
             background-color: #d97d10;
         }
+
+        /* -------------------- Popup Styles -------------------- */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none; /* מוסתר כברירת מחדל, יופעל באמצעות סקריפט */
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .popup-content {
+            background: #fff;
+            max-width: 400px;
+            width: 90%;
+            margin: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .popup-content h2 {
+            color: #2F6376;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .popup-content p {
+            color: #33302B;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        .newsletter-form input[type="email"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .newsletter-form button {
+            background-color: #F09415;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .newsletter-form button:hover {
+            background-color: #d97d10;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #F09415;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+        .social-icons a:hover {
+            color: #d97d10;
+        }
+
+        /* אופציונלי: למנוע גלילה כשהפופאפ על המסך */
+        body.popup-open {
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
+
+<!-- חלון ה-Popup -->
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+        <h2>אתר בקרוב יעלה לאוויר</h2>
+        <p>היי, תודה שהגעתם אלינו! בקרוב נעלה עם תכנים מופלאים. בינתיים, נשמח שתירשמו לניוזלטר שלנו ותקבלו 10% הנחה לקנייה הראשונה!</p>
+        <form class="newsletter-form">
+            <input type="email" name="email" placeholder="הכניסו אימייל" required>
+            <br>
+            <button type="submit">הרשמה לניוזלטר</button>
+        </form>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61567142757395&locale=he_IL" target="_blank">📘</a>
+            <a href="https://www.instagram.com/fryd__studio/" target="_blank">📷</a>
+        </div>
+    </div>
+</div>
+<!-- סוף חלון ה-Popup -->
 
 <header>
     <h1>FRYD STUDIO</h1>
@@ -307,10 +399,21 @@
 </div>
 
 <script>
+    // הצגת ה-Popup ברגע שהדף נטען
+    document.addEventListener("DOMContentLoaded", function() {
+        const popupOverlay = document.getElementById('popupOverlay');
+        // מציג את הפופאפ
+        popupOverlay.style.display = 'flex';
+
+        // מונע גלילה של הדף כשהפופאפ פתוח (אופציונלי)
+        document.body.classList.add('popup-open');
+    });
+
     function toggleChat() {
         const chatBox = document.getElementById('chatBox');
         chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
     }
+
     function toggleAbout() {
         const aboutSection = document.getElementById('about-section');
         const readMoreBtn = document.getElementById('read-more-btn');
