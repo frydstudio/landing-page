@@ -245,7 +245,6 @@
         }
 
         /* --------- Mailchimp + Popup Overrides --------- */
-        /* צמצום רוחב טופס Mailchimp שיתאים לפופאפ */
         #mc_embed_signup {
             width: 100% !important;
             box-sizing: border-box;
@@ -255,6 +254,7 @@
         }
         .mc-field-group {
             margin-bottom: 10px;
+            position: relative; /* מאפשר למקם את *שדה חובה */
         }
         .button#mc-embedded-subscribe {
             background-color: #F09415;
@@ -275,46 +275,17 @@
             align-items: center;
             margin-top: 10px;
         }
+        /* מקטינים את לוגו Mailchimp */
         .refferal_badge {
-            width: 180px !important;
+            width: 100px !important; /* הקטנה נוספת */
             height: auto !important;
         }
-        .popup-header-logo {
-            margin-bottom: 10px;
+
+        /* אייקוני הרשתות החברתיות שחורים */
+        .social-icons-black img {
+            filter: brightness(0); /* ייצר אייקון שחור */
         }
-        .popup-header-logo img {
-            max-width: 60px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-        .popup-header-logo h1 {
-            margin: 5px 0 0;
-            font-size: 1.2em;
-            color: #2F6376;
-        }
-        .top-message {
-            margin-bottom: 10px;
-            font-size: 0.9em; /* מקטינים קצת */
-            color: #33302B;
-        }
-        .bold-discount {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        h2.newsletter-title {
-            margin: 10px 0;
-            font-size: 1.2em;
-            color: #2F6376;
-        }
-        .field-required-hint {
-            font-size: 0.85em;
-            color: #F09415;
-            margin-bottom: 5px;
-        }
-        .catalog-download-button {
-            margin-top: 10px;
-        }
+
     </style>
 </head>
 <body>
@@ -323,22 +294,22 @@
 <div class="popup-overlay" id="popupOverlay">
     <div class="popup-content">
         
-        <!-- לוגו וכיתוב בחלק העליון -->
-        <div class="popup-header-logo">
-            <!-- כאן אפשר לשים לוגו משלך במידה ויש: <img src="logo.png" alt="FRYD STUDIO" /> -->
-            <h1>FRYD STUDIO</h1>
+        <!-- לוגו וכיתוב בחלק העליון (FRYD STUDIO) -->
+        <div style="margin-bottom: 10px;">
+            <!-- אם יש לוגו ממשי, אפשר להכניס כאן תמונה:
+                 <img src="logo.png" alt="FRYD STUDIO" style="max-width:50px;height:auto;" /> -->
+            <h1 style="margin: 5px 0 0; font-size: 1.2em; color: #2F6376;">
+                FRYD STUDIO
+            </h1>
         </div>
         
-        <!-- כותרת עליונה קטנה -->
-        <p class="top-message">האתר בקרוב יעלה לאוויר</p>
-        
-        <!-- טקסט על ההנחה בבולד -->
-        <p class="bold-discount">10% הנחה לנרשמים לרכישה הראשונה</p>
-        
-        <!-- כותרת הרשמה לניוזלטר -->
-        <h2 class="newsletter-title">הרשמה לניוזליטר</h2>
+        <!-- הטקסט הראשי -->
+        <p style="font-size: 0.9em; margin-bottom: 10px;">
+            בינתיים אתם יכולים להירשם לניוזליטר שלנו בו נעדכן על עיצובים חדשים ומבצעים מיוחדים.<br>
+            כמובן שנפנק אתכם במשהו קטן:)
+        </p>
 
-        <!-- הטופס של Mailchimp (מותאם) -->
+        <!-- טופס Mailchimp (ללא כותרת 'הרשמה לניוזליטר') -->
         <div id="mc_embed_shell">
             <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
             <div id="mc_embed_signup">
@@ -350,7 +321,8 @@
                       target="_blank">
                     
                     <div id="mc_embed_signup_scroll">
-                        <!-- הסרנו את התווית (label) ושמרנו רק את השדה -->
+                        
+                        <!-- שדה האימייל -->
                         <div class="mc-field-group">
                             <input type="email"
                                    name="EMAIL"
@@ -359,10 +331,9 @@
                                    required=""
                                    placeholder="name@example.com"
                                    value="">
+                            <!-- *שדה חובה למטה בצד ימין -->
+                            <span style="position: absolute; bottom: -15px; right: 0; font-size: 0.8em; color: #F09415;">*שדה חובה</span>
                         </div>
-                        
-                        <!-- שדה חובה -->
-                        <p class="field-required-hint">*שדה חובה</p>
 
                         <!-- תגיות שגיאה/הצלחה של Mailchimp -->
                         <div id="mce-responses" class="clear foot">
@@ -397,7 +368,6 @@
                     </div>
                 </form>
             </div>
-            <!-- הסקריפט המקורי של Mailchimp -->
             <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
             <script type="text/javascript">
                 (function($) {
@@ -415,15 +385,14 @@
             </script>
         </div>
         <!-- סוף טופס Mailchimp -->
-        
-        <!-- כפתור הורדת הקטלוג -->
-        <a href="catalog2025.pdf" download class="catalog-download-button">
+
+        <!-- כפתור להורדת הקטלוג (כפתור בולט) -->
+        <a href="catalog2025.pdf" download class="catalog-download-button" style="margin-top: 20px;">
             להורדת הקטלוג
         </a>
-        
-        <!-- נשאיר את האייקונים של הרשתות החברתיות למטה או מסירים?
-             לא ביקשת להסיר, לכן אני משאיר אותם. -->
-        <div class="social-icons" style="margin-top: 15px;">
+
+        <!-- איקונים של הרשתות החברתיות בצבע שחור, מתחת לכפתור -->
+        <div class="social-icons-black" style="margin-top: 15px; display: flex; justify-content: center; gap: 15px;">
             <a href="https://www.facebook.com/profile.php?id=61567142757395&locale=he_IL" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
                      alt="Facebook"
