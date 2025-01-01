@@ -239,7 +239,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        /* אופציונלי: למנוע גלילה כשהפופאפ על המסך */
+        /* אופציונלי: למנוע גלילה כשהפופאפ פתוח */
         body.popup-open {
             overflow: hidden;
         }
@@ -265,27 +265,30 @@
             flex-direction: column;
             align-items: center;
         }
-        .mc-field-group input[type="email"] {
-            width: 220px;
+
+        /* שדה האימייל והכפתור - אותו גודל, אחד מתחת לשני */
+        .mc-field-group input[type="email"],
+        .mc-field-group #mc-embedded-subscribe {
+            width: 220px;             /* אותו רוחב */
+            height: 40px;            /* אותו גובה מוגדר */
+            box-sizing: border-box;   /* מבטיח שפדינג לא יחרוג מהמידה */
             margin-bottom: 10px;
             text-align: center;
         }
-        /* הכפתור – כעת text ממורכז אנכית ואופקית */
+
+        /* כפתור ההרשמה - ממורכז אנכית ואופקית */
         .button#mc-embedded-subscribe {
             background-color: #F09415;
             border: none;
-            padding: 10px 20px;
             color: #fff;
             font-weight: bold;
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s ease;
 
-            display: inline-flex;       /* במקום inline-block */
-            align-items: center;        /* מרכז אנכי */
-            justify-content: center;    /* מרכז אופקי */
-            text-align: center;         
-            line-height: normal;        
+            display: flex;           /* כדי ליישר אנכית */
+            align-items: center;
+            justify-content: center;
         }
         .button#mc-embedded-subscribe:hover {
             background-color: #d97d10;
@@ -325,7 +328,7 @@
             10% הנחה לנרשמים לרכישה הראשונה
         </p>
         
-        <!-- טופס Mailchimp עם שדה ממורכז וכפתור מתחתיו, ממורכז אנכית ואופקית -->
+        <!-- טופס Mailchimp עם שדה ממורכז וכפתור מתחתיו, שניהם בגודל זהה -->
         <div id="mc_embed_shell">
             <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
             <div id="mc_embed_signup">
