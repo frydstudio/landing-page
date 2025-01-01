@@ -239,12 +239,12 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        /* אופציונלי: למנוע גלילה כשהפופאפ פתוח */
+        /* אופציונלי: למנוע גלילה כשהפופאפ פתוח (body.popup-open) */
         body.popup-open {
             overflow: hidden;
         }
 
-        /* --------- Mailchimp + Popup Overrides --------- */
+        /* Mailchimp + Popup Overrides */
         #mc_embed_signup {
             width: 100% !important;
             box-sizing: border-box;
@@ -269,15 +269,19 @@
         /* שדה האימייל והכפתור - אותו גודל, אחד מתחת לשני */
         .mc-field-group input[type="email"],
         .mc-field-group #mc-embedded-subscribe {
-            width: 220px;             /* אותו רוחב */
-            height: 40px;            /* אותו גובה מוגדר */
-            box-sizing: border-box;   /* מבטיח שפדינג לא יחרוג מהמידה */
+            width: 220px;           /* אותו רוחב */
+            height: 40px;           /* אותו גובה */
+            box-sizing: border-box;
             margin-bottom: 10px;
+        }
+
+        /* שדה הטקסט במייל באמצע */
+        .mc-field-group input[type="email"] {
             text-align: center;
         }
 
-        /* כפתור ההרשמה - ממורכז אנכית ואופקית */
-        .button#mc-embedded-subscribe {
+        /* הכפתור – ממורכז טקסט, גם אנכי (line-height) וגם אופקי */
+        #mc-embedded-subscribe {
             background-color: #F09415;
             border: none;
             color: #fff;
@@ -285,12 +289,11 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s ease;
-
-            display: flex;           /* כדי ליישר אנכית */
-            align-items: center;
-            justify-content: center;
+            /* כדי למרכז טקסט אנכית, line-height = height */
+            line-height: 40px;       /* גובה הכפתור */
+            text-align: center;      /* למרכז אופקית */
         }
-        .button#mc-embedded-subscribe:hover {
+        #mc-embedded-subscribe:hover {
             background-color: #d97d10;
         }
         .clear.foot {
@@ -328,7 +331,7 @@
             10% הנחה לנרשמים לרכישה הראשונה
         </p>
         
-        <!-- טופס Mailchimp עם שדה ממורכז וכפתור מתחתיו, שניהם בגודל זהה -->
+        <!-- טופס Mailchimp עם שדה ממורכז וכפתור מתחתיו, שניהם בגודל זהה (220x40) -->
         <div id="mc_embed_shell">
             <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
             <div id="mc_embed_signup">
