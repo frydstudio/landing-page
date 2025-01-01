@@ -254,27 +254,23 @@
             text-align: center;
         }
 
-        /* הכנסת כותרת "האתר בקרוב יעלה לאוויר" גדולה ובבולד */
         .coming-soon-title {
             margin: 0;
             font-size: 1.2em; 
             font-weight: bold; 
             color: #33302B;
         }
-
-        /* מרכזים את שדה האימייל ואת הכפתור מתחתיו */
         .mc-field-group {
             display: flex;
             flex-direction: column;
-            align-items: center; /* ממרכז אופקית */
+            align-items: center;
         }
-        /* שדה האימייל – רוחב מוגדר + ממורכז */
         .mc-field-group input[type="email"] {
             width: 220px;
             margin-bottom: 10px;
             text-align: center;
         }
-        /* הכפתור – ממורכז, עם טקסט ממורכז אנכית ואופקית */
+        /* הכפתור – כעת text ממורכז אנכית ואופקית */
         .button#mc-embedded-subscribe {
             background-color: #F09415;
             border: none;
@@ -284,9 +280,12 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s ease;
-            display:  inline-block;
-            text-align: center;   /* טקסט ממורכז אופקית */
-            line-height: normal;  /* מוודא שאין חיתוך אנכי */
+
+            display: inline-flex;       /* במקום inline-block */
+            align-items: center;        /* מרכז אנכי */
+            justify-content: center;    /* מרכז אופקי */
+            text-align: center;         
+            line-height: normal;        
         }
         .button#mc-embedded-subscribe:hover {
             background-color: #d97d10;
@@ -393,7 +392,7 @@
             אתם מוזמנים להוריד את הקטלוג החדש שלנו.
         </p>
 
-        <!-- כפתור להורדת הקטלוג (כעת מפנה ל-frydstudio-catalog2025.pdf) -->
+        <!-- כפתור להורדת הקטלוג (מפנה ל-frydstudio-catalog2025.pdf) -->
         <a href="frydstudio-catalog2025.pdf" download
            style="
              display:inline-block;
@@ -457,7 +456,6 @@
 
 <section id="catalog" class="catalog">
     <h2>קטלוג 2025</h2>
-    <!-- גם כאן, אם רוצים לחבר לאותו קובץ בדיוק: -->
     <a href="frydstudio-catalog2025.pdf" class="catalog-button" download>להורדה לחץ כאן</a>
 </section>
 
