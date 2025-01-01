@@ -251,19 +251,30 @@
         }
         #mc_embed_signup_scroll {
             width: 100%;
+            text-align: center;
         }
+
+        /* הכנסת כותרת "האתר בקרוב יעלה לאוויר" גדולה ובבולד */
+        .coming-soon-title {
+            margin: 0;
+            font-size: 1.2em; 
+            font-weight: bold; 
+            color: #33302B;
+        }
+
+        /* מרכזים את שדה האימייל ואת הכפתור מתחתיו */
         .mc-field-group {
-            margin-bottom: 10px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: center; /* ממרכז אופקית */
         }
-        /* שדה האימייל – רוחב מוגדר */
+        /* שדה האימייל – רוחב מוגדר + ממורכז */
         .mc-field-group input[type="email"] {
-            width: 220px; /* בקירוב לרוחב שורת הטקסט */
-            margin-bottom: 10px; 
+            width: 220px;
+            margin-bottom: 10px;
+            text-align: center;
         }
-        /* כפתור הרשמה – ממורכז מתחת לשדה */
+        /* הכפתור – ממורכז, עם טקסט ממורכז אנכית ואופקית */
         .button#mc-embedded-subscribe {
             background-color: #F09415;
             border: none;
@@ -273,6 +284,9 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            display: inline-block;
+            text-align: center;   /* טקסט ממורכז אופקית */
+            line-height: normal;  /* מוודא שאין חיתוך אנכי */
         }
         .button#mc-embedded-subscribe:hover {
             background-color: #d97d10;
@@ -291,12 +305,12 @@
 <div class="popup-overlay" id="popupOverlay">
     <div class="popup-content">
         
-        <!-- FRYD STUDIO + שורה אחת: "האתר בקרוב יעלה לאוויר" -->
+        <!-- FRYD STUDIO + הכותרת הגדולה והמודגשת -->
         <div style="margin-bottom: 10px;">
             <h1 style="margin: 5px 0 0; font-size: 1.2em; color: #2F6376;">
                 FRYD STUDIO
             </h1>
-            <p style="margin: 0; font-size: 0.9em; color:#33302B;">
+            <p class="coming-soon-title">
                 האתר בקרוב יעלה לאוויר
             </p>
         </div>
@@ -312,7 +326,7 @@
             10% הנחה לנרשמים לרכישה הראשונה
         </p>
         
-        <!-- טופס Mailchimp עם כפתור הרשמה ממורכז מתחת לשדה המייל -->
+        <!-- טופס Mailchimp עם שדה ממורכז וכפתור מתחתיו, ממורכז אנכית ואופקית -->
         <div id="mc_embed_shell">
             <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
             <div id="mc_embed_signup">
@@ -340,11 +354,12 @@
                                    value="הרשמה">
                         </div>
 
-                        <!-- תגיות שגיאה/הצלחה של Mailchimp -->
+                        <!-- Mailchimp responses -->
                         <div id="mce-responses" class="clear foot">
                             <div class="response" id="mce-error-response" style="display: none;"></div>
                             <div class="response" id="mce-success-response" style="display: none;"></div>
                         </div>
+                        
                         <!-- שדה סמוי למניעת ספאם -->
                         <div aria-hidden="true" style="position: absolute; left: -5000px;">
                             <input type="text"
