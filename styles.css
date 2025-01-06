@@ -1,216 +1,410 @@
-/* הגדרות בסיסיות */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* -------------------------------------------------
+   הטמעת גופנים בסיסית
+------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/turn.js@4/turn.css"); /* כדי לתמוך ב-Flipbook */
 
+/* -------------------------------------------------
+   עיצוב בסיסי של גוף העמוד
+------------------------------------------------- */
 body {
-  font-family: 'Assistant', sans-serif;
-  background-color: #ffffff;
-  color: #333;
-  line-height: 1.6;
+    font-family: 'Heebo', sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    background-color: #f9f9f9;
+    color: #33302B;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 0;
+/* -------------------------------------------------
+   Header
+------------------------------------------------- */
+header {
+    background: linear-gradient(to right, #2F6376, #93BDCC);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+header h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0;
+}
+header p {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 5px 0 0;
 }
 
-/* כותרת עליונה (Header) */
-.main-header {
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #ddd;
+/* -------------------------------------------------
+   Nav
+------------------------------------------------- */
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #F09415;
+    text-align: center;
+}
+nav a {
+    margin: 0 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 1.1em;
+}
+nav a:hover {
+    text-decoration: underline;
 }
 
-.main-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
+/* -------------------------------------------------
+   Sections כלליים
+------------------------------------------------- */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2F6376;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
+/* -------------------------------------------------
+   גלריה, עדויות ושירותים (Grid)
+------------------------------------------------- */
+.gallery, .testimonials, .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
+/* -------------------------------------------------
+   About Section
+------------------------------------------------- */
+.about-section {
+    position: relative;
+    max-height: 150px; /* Approx. 3 lines */
+    overflow: hidden;
+    text-align: center;
+    transition: max-height 0.5s ease;
+}
+.about-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f9f9f9);
+}
+.read-more-btn {
+    margin-top: 20px;
+    display: inline-block;
+    background-color: #F09415;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.read-more-btn:hover {
+    background-color: #d97d10;
 }
 
-.main-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  transition: color 0.3s ease;
+/* -------------------------------------------------
+   Catalog (כפתורי קטלוג)
+------------------------------------------------- */
+.catalog {
+    margin-top: 20px;
+    text-align: center;
+}
+.catalog-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F09415;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.catalog-button:hover {
+    background-color: #d97d10;
 }
 
-.main-nav a:hover {
-  color: #007acc; /* צבע קישורים בהובר */
+/* -------------------------------------------------
+   Footer
+------------------------------------------------- */
+footer {
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+footer a {
+    color: #F09415;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
 }
 
-/* סקשן HERO */
-.hero {
-  background: #007acc;
-  color: #fff;
-  padding: 4rem 0;
-  text-align: center;
+/* -------------------------------------------------
+   Chat Widget
+------------------------------------------------- */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #F09415;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 60px;
+    height: 60px;
 }
-
-.hero-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.chat-widget:hover {
+    background-color: #d97d10;
 }
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.btn-hero {
-  background-color: #fff;
-  color: #007acc;
-  padding: 0.8rem 1.2rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.btn-hero:hover {
-  background-color: #ddd;
-}
-
-/* סקשן עבודות (Portfolio) */
-.portfolio {
-  padding: 3rem 0;
-  text-align: center;
-}
-
-.portfolio h2 {
-  margin-bottom: 0.5rem;
-}
-
-.portfolio p {
-  margin-bottom: 2rem;
-  color: #777;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.portfolio-item {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.portfolio-item img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.portfolio-item h3 {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-}
-
-/* סקשן יצירת קשר (Contact) */
-.contact {
-  padding: 3rem 0;
-  background-color: #f8f8f8;
-  text-align: center;
-}
-
-.contact h2 {
-  margin-bottom: 0.5rem;
-}
-
-.contact p {
-  margin-bottom: 1rem;
-  color: #555;
-}
-
-.contact-info {
-  margin-bottom: 2rem;
-}
-
-.contact-info p {
-  margin-bottom: 0.5rem;
-}
-
-.contact-info a {
-  color: #007acc;
-  text-decoration: none;
-}
-
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-form label {
-  display: block;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  margin-top: 1rem;
-  background-color: #007acc;
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #005b99;
-}
-
-/* כותרת תחתונה (Footer) */
-.main-footer {
-  text-align: center;
-  background-color: #f8f8f8;
-  padding: 1.5rem 0;
-  border-top: 1px solid #ddd;
-}
-
-.main-footer p {
-  color: #333;
-  font-size: 0.9rem;
-}
-
-/* התאמות רספונסיביות */
-@media (max-width: 768px) {
-  .main-header .container {
+.chat-box {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
     flex-direction: column;
-    gap: 1rem;
-  }
+    overflow: hidden;
+}
+.chat-box header {
+    background-color: #F09415;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+.chat-box .close-chat {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+.chat-box form {
+    padding: 15px;
+}
+.chat-box input, .chat-box textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.chat-box button {
+    width: 100%;
+    background-color: #F09415;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.chat-box button:hover {
+    background-color: #d97d10;
+}
 
-  .main-nav ul {
+/* -------------------------------------------------
+   Popup Styles
+------------------------------------------------- */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* מוסתר כברירת מחדל, יופעל באמצעות סקריפט */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.popup-content {
+    background: #fff;
+    max-width: 400px;
+    width: 90%;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+body.popup-open {
+    overflow: hidden;
+}
+
+/* -------------------------------------------------
+   Mailchimp + Popup Overrides
+------------------------------------------------- */
+#mc_embed_signup {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+#mc_embed_signup_scroll {
+    width: 100%;
+    text-align: center;
+}
+.coming-soon-title {
+    margin: 0;
+    font-size: 1.2em; 
+    font-weight: bold; 
+    color: #33302B;
+}
+.mc-field-group {
+    display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
+
+/* שדה האימייל והכפתור - אותו גודל, אחד מתחת לשני */
+.mc-field-group input[type="email"],
+.mc-field-group #mc-embedded-subscribe {
+    width: 220px; /* אותו רוחב */
+    height: 40px; /* אותו גובה */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* שדה הטקסט במייל באמצע */
+.mc-field-group input[type="email"] {
+    text-align: center;
+}
+
+/* הכפתור – ממורכז טקסט, גם אנכי (line-height) וגם אופקי */
+#mc-embedded-subscribe {
+    background-color: #1d1e23;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    /* כדי למרכז טקסט אנכית, line-height = height */
+    line-height: 40px;       
+    text-align: center;      
+}
+#mc-embedded-subscribe:hover {
+    background-color: #d97d10;
+}
+
+.clear.foot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* -------------------------------------------------
+   Flipbook Overlay (אם תרצה לשלב את המחברת)
+------------------------------------------------- */
+.flipbook-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: none; /* נסגר כברירת מחדל */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* מעל הכל */
+}
+.flipbook-container {
+    position: relative;
+    background-color: #fff;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.flipbook-outer-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #F09415;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 999;
+}
+.flipbook-download-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    background: #F09415;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+.flipbook-download-btn:hover {
+    background-color: #d97d10;
+}
+#flipbook {
+    width: 100%;
+    height: 100%;
+}
+.page {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+.page1 {
+    background-color: #EEE;
+}
+.page2 {
+    background-color: #DDD;
 }
