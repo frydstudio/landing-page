@@ -302,6 +302,84 @@
             align-items: center;
             margin-top: 10px;
         }
+
+        /* ------------------------------------------------------------------
+           החלק החדש ליצירת Flipbook Overlay
+        ------------------------------------------------------------------ */
+        /* ספריית turn.js לצורך הדוגמה */
+        @import url("https://cdn.jsdelivr.net/npm/turn.js@4/turn.css");
+        /* Overlay נוסף עבור flipbook */
+        .flipbook-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            display: none; /* נסגר כברירת מחדל */
+            justify-content: center;
+            align-items: center;
+            z-index: 10000; /* מעל הכל */
+        }
+        .flipbook-container {
+            position: relative;
+            background-color: #fff;
+            width: 80%;
+            height: 80%;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .flipbook-outer-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #F09415;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            z-index: 999;
+        }
+        .flipbook-download-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 50%;
+            transform: translateX(50%);
+            background: #F09415;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .flipbook-download-btn:hover {
+            background-color: #d97d10;
+        }
+        /* האלמנט שבו turn.js ירנדר את ה"ספר" */
+        #flipbook {
+            width: 100%;
+            height: 100%;
+        }
+        /* עמודים לדוגמה */
+        .page {
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+        }
+        .page1 {
+            background-color: #EEE;
+        }
+        .page2 {
+            background-color: #DDD;
+        }
     </style>
 </head>
 <body>
@@ -328,7 +406,7 @@
 
         <!-- 10% הנחה בבולד -->
         <p style="font-weight: bold; margin-bottom: 15px;">
-           קבלו 10% הנחה על ההזמנה הראשונה שלכם
+            10% הנחה לנרשמים לרכישה הראשונה
         </p>
         
         <!-- טופס Mailchimp עם שדה ממורכז וכפתור מתחתיו, שניהם בגודל זהה (220x40) -->
@@ -393,28 +471,29 @@
         </div>
         <!-- סוף טופס Mailchimp -->
 
-        <!-- שורת טקסט חדשה מעל כפתור ההורדה -->
+        <!-- שורת טקסט חדשה מעל הכפתור של flipbook -->
         <p style="font-size: 0.9em; margin: 20px 0 10px;">
-            אתם מוזמנים להוריד את הקטלוג החדש שלנו.
+            אתם מוזמנים לצפות בקטלוג שלנו כמחברת, או להוריד אותו ישירות.
         </p>
 
-        <!-- כפתור להורדת הקטלוג (מפנה ל-frydstudio-catalog2025.pdf) -->
-        <a href="frydstudio-catalog2025.pdf" download
-           style="
-             display:inline-block;
-             background-color:#F09415;
-             color:#fff;
-             padding:10px 20px;
-             border-radius:5px;
-             font-weight:bold;
-             text-decoration:none;
-             transition:background-color 0.3s ease;
-           "
-           onmouseover="this.style.backgroundColor='#d97d10';"
-           onmouseout="this.style.backgroundColor='#F09415';"
+        <!-- כפתור חדש - פותח את ה-Flipbook Overlay -->
+        <button 
+            style="
+                background-color:#F09415;
+                color:#fff;
+                padding:10px 20px;
+                border-radius:5px;
+                font-weight:bold;
+                border:none;
+                cursor:pointer;
+                transition:background-color 0.3s ease;
+            "
+            onmouseover="this.style.backgroundColor='#d97d10';"
+            onmouseout="this.style.backgroundColor='#F09415';"
+            onclick="openFlipbook()"
         >
-            להורדת קטלוג 2025
-        </a>
+            לצפייה בקטלוג כמחברת
+        </button>
 
         <!-- איקונים של הרשתות החברתיות -->
         <div style="margin-top: 15px; display: flex; justify-content: center; gap: 15px;">
@@ -435,6 +514,28 @@
     </div>
 </div>
 <!-- סוף חלון ה-Popup -->
+
+<!-- Overlay חדש ל-Flipbook -->
+<div class="flipbook-overlay" id="flipbookOverlay">
+    <div class="flipbook-container">
+        <!-- כפתור לסגירת ה-Flipbook -->
+        <button class="flipbook-outer-close" onclick="closeFlipbook()">X</button>
+        
+        <!-- כפתור להורדת הקטלוג יופיע בתחתית הדפים -->
+        <a href="frydstudio-catalog2025.pdf" download class="flipbook-download-btn">
+            הורדת הקטלוג
+        </a>
+
+        <!-- אלמנט המחברת (Turn.js) -->
+        <div id="flipbook">
+            <!-- עמוד 1 לדוגמה -->
+            <div class="page page1">עמוד 1</div>
+            <!-- עמוד 2 לדוגמה -->
+            <div class="page page2">עמוד 2</div>
+        </div>
+    </div>
+</div>
+<!-- סוף ה-Flipbook Overlay -->
 
 <header>
     <h1>FRYD STUDIO</h1>
@@ -536,20 +637,26 @@
     </form>
 </div>
 
+<!-- סקריפט Turn.js (ספריית צד-שלישי ל"מחברת") -->
+<script src="https://cdn.jsdelivr.net/npm/turn.js@4/turn.min.js"></script>
 <script>
     // הצגת ה-Popup ברגע שהדף נטען
     document.addEventListener("DOMContentLoaded", function() {
         const popupOverlay = document.getElementById('popupOverlay');
-        // מציג את הפופאפ
         popupOverlay.style.display = 'flex';
-
-        // מונע גלילה של הדף כשהפופאפ פתוח (אופציונלי)
         document.body.classList.add('popup-open');
+
+        // Initialize turn.js על האלמנט #flipbook
+        $('#flipbook').turn({
+            width: '100%',
+            height: '100%',
+            autoCenter: true
+        });
     });
 
     function toggleChat() {
         const chatBox = document.getElementById('chatBox');
-        chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+        chatBox.style.display = (chatBox.style.display === 'flex') ? 'none' : 'flex';
     }
 
     function toggleAbout() {
@@ -564,6 +671,15 @@
             aboutSection.classList.remove('about-section');
             readMoreBtn.innerHTML = 'סגור טקסט';
         }
+    }
+
+    // פותח את ה-Flipbook Overlay
+    function openFlipbook() {
+        document.getElementById('flipbookOverlay').style.display = 'flex';
+    }
+    // סוגר את ה-Flipbook Overlay
+    function closeFlipbook() {
+        document.getElementById('flipbookOverlay').style.display = 'none';
     }
 </script>
 
