@@ -1,574 +1,635 @@
 <!DOCTYPE html>
 <html lang="he">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="סטודיו פריד - עיצובים ייחודיים המשלבים יצירתיות וטכנולוגיה מתקדמת">
-    <meta name="keywords" content="עיצוב, סטודיו פריד, טכנולוגיה מתקדמת, עיצוב בהתאמה אישית, סדנאות יצירה">
-    <title>FRYD STUDIO</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap');
-        body {
-            font-family: 'Heebo', sans-serif;
-            margin: 0;
-            padding: 0;
-            direction: rtl;
-            background-color: #f9f9f9;
-            color: #33302B;
-        }
-        header {
-            background: linear-gradient(to right, #2F6376, #93BDCC);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-        header h1 {
-            font-size: 3em;
-            font-weight: 700;
-            margin: 0;
-        }
-        header p {
-            font-size: 1.2em;
-            font-weight: 400;
-            margin: 5px 0 0;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-            background-color: #F09415;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #FFFFFF;
-            text-decoration: none;
-            font-weight: 300;
-            font-size: 1.1em;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 40px 20px;
-            text-align: center;
-        }
-        section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #2F6376;
-        }
-        .gallery, .testimonials, .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .card img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .about-section {
-            position: relative;
-            max-height: 150px; /* Approx. 3 lines */
-            overflow: hidden;
-            text-align: center;
-            transition: max-height 0.5s ease;
-        }
-        .about-section::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 50px;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f9f9f9);
-        }
-        .read-more-btn {
-            margin-top: 20px;
-            display: inline-block;
-            background-color: #F09415;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .read-more-btn:hover {
-            background-color: #d97d10;
-        }
-        .catalog {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .catalog-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #F09415;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .catalog-button:hover {
-            background-color: #d97d10;
-        }
-        footer {
-            background-color: #282c34;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-        footer a {
-            color: #F09415;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        .chat-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #F09415;
-            color: white;
-            padding: 15px;
-            border-radius: 50%;
-            font-size: 1.5em;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 60px;
-            height: 60px;
-        }
-        .chat-widget:hover {
-            background-color: #d97d10;
-        }
-        .chat-box {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            width: 300px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        .chat-box header {
-            background-color: #F09415;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-            position: relative;
-        }
-        .chat-box .close-chat {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            background: none;
-            border: none;
-            color: #000000;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
-        .chat-box form {
-            padding: 15px;
-        }
-        .chat-box input, .chat-box textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .chat-box button {
-            width: 100%;
-            background-color: #F09415;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .chat-box button:hover {
-            background-color: #d97d10;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="סטודיו פריד - עיצובים ייחודיים המשלבים יצירתיות וטכנולוגיה מתקדמת">
+  <meta name="keywords" content="עיצוב, סטודיו פריד, טכנולוגיה מתקדמת, עיצוב בהתאמה אישית, סדנאות יצירה">
+  <title>FRYD STUDIO</title>
+  
+  <!-- גופנים -->
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
-        /* -------------------- Popup Styles -------------------- */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: none; /* מוסתר כברירת מחדל, יופעל באמצעות סקריפט */
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-        }
-        .popup-content {
-            background: #fff;
-            max-width: 400px;
-            width: 90%;
-            margin: 20px;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        /* אופציונלי: למנוע גלילה כשהפופאפ פתוח (body.popup-open) */
-        body.popup-open {
-            overflow: hidden;
-        }
-
-        /* Mailchimp + Popup Overrides */
-        #mc_embed_signup {
-            width: 100% !important;
-            box-sizing: border-box;
-        }
-        #mc_embed_signup_scroll {
-            width: 100%;
-            text-align: center;
-        }
-
-        .coming-soon-title {
-            margin: 0;
-            font-size: 1.2em; 
-            font-weight: bold; 
-            color: #33302B;
-        }
-        .mc-field-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* שדה האימייל והכפתור - אותו גודל, אחד מתחת לשני */
-        .mc-field-group input[type="email"],
-        .mc-field-group #mc-embedded-subscribe {
-            width: 220px;           /* אותו רוחב */
-            height: 40px;           /* אותו גובה */
-            box-sizing: border-box;
-            margin-bottom: 10px;
-        }
-
-        /* שדה הטקסט במייל באמצע */
-        .mc-field-group input[type="email"] {
-            text-align: center;
-        }
-
-        /* הכפתור – ממורכז טקסט, גם אנכי (line-height) וגם אופקי */
-        #mc-embedded-subscribe {
-            background-color: #1d1e23;
-            border: none;
-            color: #fff;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            /* כדי למרכז טקסט אנכית, line-height = height */
-            line-height: 40px;       /* גובה הכפתור */
-            text-align: center;      /* למרכז אופקית */
-        }
-        #mc-embedded-subscribe:hover {
-            background-color: #d97d10;
-        }
-        .clear.foot {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
-    </style>
+  <style>
+    /* Reset בסיסי */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Heebo', sans-serif;
+      background-color: #f9f9f9;
+      color: #33302B;
+      direction: rtl;
+      line-height: 1.6;
+    }
+    
+    a {
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: #d97d10;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(to right, #2F6376, #93BDCC);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      font-weight: 700;
+      z-index: 1;
+      position: relative;
+    }
+    
+    header p {
+      font-size: 1.2em;
+      font-weight: 400;
+      margin-top: 10px;
+      z-index: 1;
+      position: relative;
+    }
+    
+    /* Navigation */
+    nav {
+      background-color: #F09415;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav a {
+      margin: 0 20px;
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+    
+    nav a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Section Titles */
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      color: #2F6376;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    /* About Section עם אפקט קריאה/סגירה */
+    .about-section {
+      max-height: 150px;
+      overflow: hidden;
+      position: relative;
+      transition: max-height 0.5s ease;
+      text-align: center;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-size: 1.1em;
+    }
+    
+    .about-section::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: linear-gradient(to bottom, rgba(249,249,249,0), #f9f9f9);
+    }
+    
+    .read-more-btn {
+      display: inline-block;
+      background-color: #F09415;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    
+    .read-more-btn:hover {
+      background-color: #d97d10;
+    }
+    
+    /* כפתור קטלוג */
+    .catalog {
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .catalog-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #F09415;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    
+    .catalog-button:hover {
+      background-color: #d97d10;
+    }
+    
+    /* Grid Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .card-content h3 {
+      color: #2F6376;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+    }
+    
+    .card-content p {
+      font-size: 1em;
+      color: #555;
+    }
+    
+    /* Testimonials */
+    .testimonials .card {
+      padding: 30px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #282c34;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+    
+    footer p {
+      margin-bottom: 10px;
+    }
+    
+    footer img {
+      vertical-align: middle;
+    }
+    
+    /* Chat Widget */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #F09415;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8em;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+      z-index: 100;
+    }
+    
+    .chat-widget:hover {
+      background-color: #d97d10;
+    }
+    
+    .chat-box {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 320px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 100;
+    }
+    
+    .chat-box header {
+      background-color: #F09415;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      position: relative;
+    }
+    
+    .chat-box .close-chat {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    
+    .chat-box form {
+      padding: 15px;
+    }
+    
+    .chat-box input,
+    .chat-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+    
+    .chat-box button {
+      width: 100%;
+      background-color: #F09415;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    
+    .chat-box button:hover {
+      background-color: #d97d10;
+    }
+    
+    /* Popup Styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    
+    .popup-content {
+      background: #fff;
+      max-width: 400px;
+      width: 90%;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    /* Mailchimp Overrides */
+    #mc_embed_signup {
+      width: 100% !important;
+    }
+    
+    #mc_embed_signup_scroll {
+      text-align: center;
+    }
+    
+    .mc-field-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .mc-field-group input[type="email"],
+    .mc-field-group #mc-embedded-subscribe {
+      width: 220px;
+      height: 40px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    
+    .mc-field-group input[type="email"] {
+      text-align: center;
+    }
+    
+    #mc-embedded-subscribe {
+      background-color: #1d1e23;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      line-height: 40px;
+    }
+    
+    #mc-embedded-subscribe:hover {
+      background-color: #d97d10;
+    }
+    
+    .clear.foot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      nav a {
+        margin: 0 10px;
+      }
+      .chat-box {
+        width: 90%;
+        right: 5%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- חלון ה-Popup -->
-<div class="popup-overlay" id="popupOverlay">
+  <!-- Popup חלון הרשמה -->
+  <div class="popup-overlay" id="popupOverlay">
     <div class="popup-content">
-        
-        <!-- FRYD STUDIO + הכותרת הגדולה והמודגשת -->
-        <div style="margin-bottom: 10px;">
-            <h1 style="margin: 5px 0 0; font-size: 1.2em; color: #2F6376;">
-                FRYD STUDIO
-            </h1>
-            <p class="coming-soon-title">
-                האתר בקרוב יעלה לאוויר
-            </p>
-        </div>
-        
-        <!-- טקסט ראשי -->
-        <p style="font-size: 0.9em; margin-bottom: 10px;">
-            בינתיים אתם יכולים להירשם לניוזליטר שלנו בו נעדכן על עיצובים חדשים ומבצעים מיוחדים.<br>
-            כמובן שנפנק אתכם במשהו קטן:)
-        </p>
-
-        <!-- 10% הנחה בבולד -->
-        <p style="font-weight: bold; margin-bottom: 15px;">
-           קבלו 10% הנחה על ההזמנה הראשונה שלכם
-        </p>
-        
-        <!-- טופס Mailchimp עם שדה ממורכז וכפתור מתחתיו, שניהם בגודל זהה (220x40) -->
-        <div id="mc_embed_shell">
-            <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-            <div id="mc_embed_signup">
-                <form action="https://frydstudio.us11.list-manage.com/subscribe/post?u=c27d02b4487ed8e0ce56412e7&amp;id=afc80efd29&amp;f_id=003ca4e1f0"
-                      method="post"
-                      id="mc-embedded-subscribe-form"
-                      name="mc-embedded-subscribe-form"
-                      class="validate"
-                      target="_blank">
-                    
-                    <div id="mc_embed_signup_scroll">
-                        
-                        <div class="mc-field-group">
-                            <input type="email"
-                                   name="EMAIL"
-                                   class="required email"
-                                   id="mce-EMAIL"
-                                   required=""
-                                   placeholder="name@example.com"
-                                   value="">
-                            <input type="submit"
-                                   name="subscribe"
-                                   id="mc-embedded-subscribe"
-                                   class="button"
-                                   value="הרשמה">
-                        </div>
-
-                        <!-- Mailchimp responses -->
-                        <div id="mce-responses" class="clear foot">
-                            <div class="response" id="mce-error-response" style="display: none;"></div>
-                            <div class="response" id="mce-success-response" style="display: none;"></div>
-                        </div>
-                        
-                        <!-- שדה סמוי למניעת ספאם -->
-                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                            <input type="text"
-                                   name="b_c27d02b4487ed8e0ce56412e7_afc80efd29"
-                                   tabindex="-1"
-                                   value="">
-                        </div>
-                    </div>
-                </form>
+      <div style="margin-bottom: 10px;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 1.8em; color: #2F6376; margin-bottom: 5px;">FRYD STUDIO</h1>
+        <p style="font-weight: bold; font-size: 1.1em;">האתר בקרוב יעלה לאוויר</p>
+      </div>
+      <p style="font-size: 0.9em; margin-bottom: 10px;">
+        בינתיים אתם מוזמנים להירשם לניוזליטר שלנו בו נעדכן על עיצובים חדשים ומבצעים מיוחדים.<br>
+        כמובן – נפנק אתכם במשהו קטן :)
+      </p>
+      <p style="font-weight: bold; margin-bottom: 15px;">קבלו 10% הנחה על ההזמנה הראשונה שלכם</p>
+      
+      <!-- טופס Mailchimp -->
+      <div id="mc_embed_shell">
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+        <div id="mc_embed_signup">
+          <form action="https://frydstudio.us11.list-manage.com/subscribe/post?u=c27d02b4487ed8e0ce56412e7&amp;id=afc80efd29&amp;f_id=003ca4e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+            <div id="mc_embed_signup_scroll">
+              <div class="mc-field-group">
+                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required placeholder="name@example.com">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="הרשמה">
+              </div>
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
+              </div>
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_c27d02b4487ed8e0ce56412e7_afc80efd29" tabindex="-1" value="">
+              </div>
             </div>
-            <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-            <script type="text/javascript">
-                (function($) {
-                    window.fnames = new Array(); 
-                    window.ftypes = new Array();
-                    fnames[0]='EMAIL'; ftypes[0]='email';
-                    fnames[1]='FNAME'; ftypes[1]='text';
-                    fnames[2]='LNAME'; ftypes[2]='text';
-                    fnames[3]='ADDRESS'; ftypes[3]='address';
-                    fnames[4]='PHONE'; ftypes[4]='phone';
-                    fnames[5]='BIRTHDAY'; ftypes[5]='birthday';
-                    fnames[6]='COMPANY'; ftypes[6]='text';
-                }(jQuery));
-                var $mcj = jQuery.noConflict(true);
-            </script>
+          </form>
         </div>
-        <!-- סוף טופס Mailchimp -->
-
-        <!-- שורת טקסט חדשה מעל כפתור ההורדה -->
-        <p style="font-size: 0.9em; margin: 20px 0 10px;">
-            אתם מוזמנים להוריד את הקטלוג החדש שלנו.
-        </p>
-
-        <!-- כפתור להורדת הקטלוג (מפנה ל-frydstudio-catalog2025.pdf) -->
-        <a href="frydstudio-catalog2025.pdf" download
-           style="
-             display:inline-block;
-             background-color:#F09415;
-             color:#fff;
-             padding:10px 20px;
-             border-radius:5px;
-             font-weight:bold;
-             text-decoration:none;
-             transition:background-color 0.3s ease;
-           "
-           onmouseover="this.style.backgroundColor='#d97d10';"
-           onmouseout="this.style.backgroundColor='#F09415';"
-        >
-            להורדת קטלוג 2025
+        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+        <script type="text/javascript">
+          (function($) {
+            window.fnames = [];
+            window.ftypes = [];
+            fnames[0] = 'EMAIL'; ftypes[0] = 'email';
+            fnames[1] = 'FNAME'; ftypes[1] = 'text';
+            fnames[2] = 'LNAME'; ftypes[2] = 'text';
+            fnames[3] = 'ADDRESS'; ftypes[3] = 'address';
+            fnames[4] = 'PHONE'; ftypes[4] = 'phone';
+            fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday';
+            fnames[6] = 'COMPANY'; ftypes[6] = 'text';
+          }(jQuery));
+          var $mcj = jQuery.noConflict(true);
+        </script>
+      </div>
+      
+      <p style="font-size: 0.9em; margin: 20px 0 10px;">אתם מוזמנים להוריד את הקטלוג החדש שלנו.</p>
+      <a href="frydstudio-catalog2025.pdf" download class="catalog-button">להורדת קטלוג 2025</a>
+      
+      <div style="margin-top: 15px; display: flex; justify-content: center; gap: 15px;">
+        <a href="https://www.facebook.com/profile.php?id=61567142757395&locale=he_IL" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="24" height="24">
         </a>
-
-        <!-- איקונים של הרשתות החברתיות -->
-        <div style="margin-top: 15px; display: flex; justify-content: center; gap: 15px;">
-            <a href="https://www.facebook.com/profile.php?id=61567142757395&locale=he_IL" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                     alt="Facebook"
-                     width="24"
-                     height="24">
-            </a>
-            <a href="https://www.instagram.com/fryd__studio/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
-                     alt="Instagram"
-                     width="24"
-                     height="24">
-            </a>
-        </div>
-
+        <a href="https://www.instagram.com/fryd__studio/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" width="24" height="24">
+        </a>
+      </div>
     </div>
-</div>
-<!-- סוף חלון ה-Popup -->
-
-<header>
+  </div>
+  
+  <!-- Header -->
+  <header>
     <h1>FRYD STUDIO</h1>
     <p>Creativity meets technology</p>
-</header>
-
-<nav>
+  </header>
+  
+  <!-- Navigation -->
+  <nav>
     <a href="#about">אודות</a>
     <a href="#services">שירותים</a>
     <a href="#gallery">גלריה</a>
     <a href="#testimonials">לקוחות ממליצים</a>
-</nav>
-
-<section id="about">
+  </nav>
+  
+  <!-- About Section -->
+  <section id="about">
     <h2>מי אנחנו?</h2>
     <div class="about-section" id="about-section">
-        <p>
-            סטודיו פריד מתמחה ביצירת עיצובים חדשניים וייחודיים שמשלבים יצירתיות עם טכנולוגיה מתקדמת.
-            המוצרים שלנו תוכננו להציע שילוב מושלם בין אסתטיקה ופונקציונליות, ומיועדים לתת מענה לצרכים המגוונים של הלקוחות שלנו.
-            כל פרויקט מתחיל בהקשבה והבנה מעמיקה של החזון שלך, ומסתיים במוצרים מרהיבים המותאמים לדרישה.
-        </p>
+      <p>
+        סטודיו פריד מתמחה ביצירת עיצובים חדשניים וייחודיים שמשלבים יצירתיות עם טכנולוגיה מתקדמת.
+        המוצרים שלנו תוכננו להציע שילוב מושלם בין אסתטיקה ופונקציונליות, ומיועדים לתת מענה לצרכים המגוונים של לקוחותינו.
+        כל פרויקט מתחיל בהקשבה והבנה מעמיקה של החזון שלך ומסתיים ביצירה מרהיבה.
+      </p>
     </div>
     <button class="read-more-btn" id="read-more-btn" onclick="toggleAbout()">המשך קריאה</button>
-</section>
-
-<section id="catalog" class="catalog">
+  </section>
+  
+  <!-- קטלוג -->
+  <section id="catalog" class="catalog">
     <h2>קטלוג 2025</h2>
     <a href="frydstudio-catalog2025.pdf" class="catalog-button" download>להורדה לחץ כאן</a>
-</section>
-
-<section id="services" class="services">
+  </section>
+  
+  <!-- שירותים -->
+  <section id="services">
     <h2>השירותים שלנו</h2>
-    <div class="card">
-        <h3>עיצובים בהתאמה אישית</h3>
-        <p>עיצובים ייחודיים לפי דרישות הלקוח.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="card-content">
+          <h3>עיצובים בהתאמה אישית</h3>
+          <p>עיצובים ייחודיים שמותאמים לחלום שלך.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>מוצרים קיימים</h3>
+          <p>מבחר מוצרים מעוצבים הזמינים להזמנה מידית.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>בקרוב: סדנאות יצירה</h3>
+          <p>למדו ליצור פריטים ייחודיים בסדנאות מקצועיות.</p>
+        </div>
+      </div>
     </div>
-    <div class="card">
-        <h3>מוצרים קיימים</h3>
-        <p>מגוון מוצרים מעוצבים שזמינים להזמנה מידית.</p>
-    </div>
-    <div class="card">
-        <h3>בקרוב... סדנאות יצירה</h3>
-        <p>למדו ליצור פריטים ייחודיים בסדנאות יצירה מקצועיות.</p>
-    </div>
-</section>
-
-<section id="gallery" class="gallery">
+  </section>
+  
+  <!-- גלריה -->
+  <section id="gallery">
     <h2>גלריה</h2>
-    <div class="card">
-        <img src="product1.jpg" alt="מוצר 1">
+    <div class="grid">
+      <!-- החלף את התמונה הבאה בתמונות הסטודיו שלך -->
+      <div class="card">
+        <img src="product1.jpg" alt="תמונה 1">
+      </div>
+      <div class="card">
+        <img src="product2.jpg" alt="תמונה 2">
+      </div>
+      <!-- אפשר להוסיף עוד תמונות לפי הצורך -->
     </div>
-    <div class="card">
-        <img src="product2.jpg" alt="מוצר 2">
-    </div>
-</section>
-
-<section id="testimonials" class="testimonials">
+  </section>
+  
+  <!-- לקוחות ממליצים -->
+  <section id="testimonials">
     <h2>לקוחות ממליצים</h2>
-    <div class="card">
-        <p>"חוויה מדהימה! המוצרים של סטודיו פריד שדרגו את הבית שלי!"</p>
-        <h3>איילת</h3>
+    <div class="grid">
+      <div class="card">
+        <div class="card-content">
+          <p>"חוויה מדהימה! הסטייל והעיצוב של סטודיו פריד שדרגו את כל המראה בבית שלי."</p>
+          <h3>איילת</h3>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <p>"עבודה מקצועית, חדשנית ועם יחס אישי יוצא דופן. מומלץ בחום!"</p>
+          <h3>יוסי</h3>
+        </div>
+      </div>
     </div>
-    <div class="card">
-        <p>"עבודה מקצועית, חדשנית, ויחס אישי לאורך כל הדרך. מומלץ בחום!"</p>
-        <h3>יוסי</h3>
-    </div>
-</section>
-
-<footer>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
     <p>&copy; 2024 FRYD STUDIO</p>
     <p>
-        <a href="https://www.facebook.com/profile.php?id=61567142757395&locale=he_IL" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                 alt="Facebook"
-                 width="24"
-                 height="24">
-        </a>
-        |
-        <a href="https://www.instagram.com/fryd__studio/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
-                 alt="Instagram"
-                 width="24"
-                 height="24">
-        </a>
+      <a href="https://www.facebook.com/profile.php?id=61567142757395&locale=he_IL" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="24" height="24">
+      </a>
+      |
+      <a href="https://www.instagram.com/fryd__studio/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" width="24" height="24">
+      </a>
     </p>
-</footer>
-
-<div class="chat-widget" onclick="toggleChat()">💬</div>
-<div class="chat-box" id="chatBox">
+  </footer>
+  
+  <!-- Chat Widget -->
+  <div class="chat-widget" onclick="toggleChat()">💬</div>
+  <div class="chat-box" id="chatBox">
     <header>
-        השאר פרטים ונחזור אליך
-        <button class="close-chat" onclick="toggleChat()">X</button>
+      השאר פרטים ונחזור אליך
+      <button class="close-chat" onclick="toggleChat()">X</button>
     </header>
     <form>
-        <input type="text" name="name" placeholder="שם מלא" required>
-        <input type="email" name="email" placeholder="אימייל" required>
-        <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
-        <button type="submit">שלח</button>
+      <input type="text" name="name" placeholder="שם מלא" required>
+      <input type="email" name="email" placeholder="אימייל" required>
+      <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
+      <button type="submit">שלח</button>
     </form>
-</div>
-
-<script>
-    // הצגת ה-Popup ברגע שהדף נטען
+  </div>
+  
+  <script>
+    // הצגת הפופאפ עם הרשמה בעת טעינת הדף
     document.addEventListener("DOMContentLoaded", function() {
-        const popupOverlay = document.getElementById('popupOverlay');
-        // מציג את הפופאפ
-        popupOverlay.style.display = 'flex';
-
-        // מונע גלילה של הדף כשהפופאפ פתוח (אופציונלי)
-        document.body.classList.add('popup-open');
+      const popupOverlay = document.getElementById('popupOverlay');
+      popupOverlay.style.display = 'flex';
+      document.body.classList.add('popup-open');
     });
-
+    
     function toggleChat() {
-        const chatBox = document.getElementById('chatBox');
-        chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+      const chatBox = document.getElementById('chatBox');
+      chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
     }
-
+    
     function toggleAbout() {
-        const aboutSection = document.getElementById('about-section');
-        const readMoreBtn = document.getElementById('read-more-btn');
-        if (aboutSection.style.maxHeight === 'none') {
-            aboutSection.style.maxHeight = '150px';
-            aboutSection.classList.add('about-section');
-            readMoreBtn.innerHTML = 'המשך קריאה';
-        } else {
-            aboutSection.style.maxHeight = 'none';
-            aboutSection.classList.remove('about-section');
-            readMoreBtn.innerHTML = 'סגור טקסט';
-        }
+      const aboutSection = document.getElementById('about-section');
+      const readMoreBtn = document.getElementById('read-more-btn');
+      if (aboutSection.style.maxHeight === 'none') {
+        aboutSection.style.maxHeight = '150px';
+        aboutSection.classList.add('about-section');
+        readMoreBtn.innerHTML = 'המשך קריאה';
+      } else {
+        aboutSection.style.maxHeight = 'none';
+        aboutSection.classList.remove('about-section');
+        readMoreBtn.innerHTML = 'סגור טקסט';
+      }
     }
-</script>
-
+  </script>
+  
 </body>
 </html>
-
-
-
