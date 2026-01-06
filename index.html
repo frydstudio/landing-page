@@ -1,66 +1,194 @@
-// App.jsx
+// About.jsx
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './Header';
-import Home from './Home';
-import About from './About';
-import Projects from './Projects';
-import ProjectDetails from './ProjectDetails';
-import Contact from './Contact';
 
-// נתוני דמה עבור הפרויקטים (מערך אובייקטים עם id, שם ותמונות)
-const projectsData = [
-  {
-    id: 'project1',
-    title: 'בית פרטי בהרצליה',
-    subtitle: 'עיצוב וילה מודרנית בהרצליה',
-    images: [
-      // ניתן להחליף את הנתיבים הבאים בתמונות אמיתיות מתיקיית assets או URLs
-      '/assets/project1-1.jpg',
-      '/assets/project1-2.jpg',
-      '/assets/project1-3.jpg'
-    ]
-  },
-  {
-    id: 'project2',
-    title: 'פנטהאוז בתל אביב',
-    subtitle: 'דירת גג יוקרתית עם נוף לים',
-    images: [
-      '/assets/project2-1.jpg',
-      '/assets/project2-2.jpg',
-      '/assets/project2-3.jpg'
-    ]
-  },
-  {
-    id: 'project3',
-    title: 'חלל עבודה יצירתי',
-    subtitle: 'עיצוב משרדים בסטייל אורבני תעשייתי',
-    images: [
-      '/assets/project3-1.jpg',
-      '/assets/project3-2.jpg',
-      '/assets/project3-3.jpg'
-    ]
-  }
-  // ניתן להמשיך ולהוסיף פרויקטים נוספים לפי הצורך
-];
-
-function App() {
+function About() {
   return (
-    <BrowserRouter>
-      {/* Header ניווט קבוע לכל האתר */}
-      <Header />
-
-      {/* הגדרת נתיבי הניווט לכל עמוד */}
-      <Routes>
-        <Route path="/" element={<Home projects={projectsData} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects projects={projectsData} />} />
-        {/* מסלול דינמי לפרטי פרויקט לפי id */}
-        <Route path="/projects/:projectId" element={<ProjectDetails projects={projectsData} />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </BrowserRouter>
+    <main className="pt-20 px-6 max-w-3xl mx-auto">
+      <h1 className="text-3xl font-bold mb-6">אודות הסטודיו</h1>
+      <p className="text-lg leading-relaxed mb-4">
+        סטודיו Example הוקם מתוך תשוקה לעיצוב פנים פורץ דרך המשלב אסתטיקה ופונקציונליות. 
+        בראש הסטודיו עומדת המעצבת יעל דוגמא (YAEL DUGMA), בעלת ניסיון של למעלה מ-15 שנה בעיצוב חללים פרטיים ומסחריים. 
+        יעל בוגרת המחלקה לעיצוב פנים במכללת שנקר, ומאמינה ביצירת מרחבים שמשקפים את האישיות והחלומות של הלקוחות.
+      </p>
+      <p className="text-lg leading-relaxed mb-4">
+        לכל פרויקט אנחנו ניגשים בגישה אישית וייחודית: החל מהיכרות מעמיקה עם סגנון החיים והצרכים של הלקוח, 
+        דרך פיתוח קונספט יצירתי וחדשני, ועד לביצוע קפדני down to the last detail. 
+        אנו מאמינים בעבודה צמודה עם הלקוח, בשקיפות מלאה ובמתן שירות מקצועי וחם לאורך כל תהליך התכנון והבניה.
+      </p>
+      <p className="text-lg leading-relaxed mb-4">
+        במהלך השנים הסטודיו שלנו עיצב מגוון בתים ודירות יוקרה, חללי משרדים חדשניים וחנויות קונספט. 
+        עבודותינו התפרסמו במגזינים מובילים וזכו לשבחים על היצירתיות והדיוק. 
+        המטרה שלנו היא להגשים ללקוחותינו את החלום – ליצור עבורם סביבה יפהפייה, נוחה ומעוררת השראה שהם אוהבים לשהות בה.
+      </p>
+      <p className="text-lg leading-relaxed mb-4">
+        נשמח לצרף אתכם למסע העיצוב שלנו וליצור יחד איתכם את הבית או העסק המושלם עבורכם.
+      </p>
+    </main>
   );
 }
 
-export default App;
+export default About;
+
+
+// Projects.jsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function Projects({ projects }) {
+  return (
+    <main className="pt-20 px-4">
+      <h1 className="text-3xl font-bold text-center mb-8">הפרויקטים שלנו</h1>
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map(project => (
+          <Link 
+            key={project.id} 
+            to={`/projects/${project.id}`} 
+            className="group block overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition"
+          >
+            {/* תמונת קאבר של הפרויקט */}
+            <img 
+              src={project.images[0]} 
+              alt={project.title} 
+              className="w-full h-56 object-cover transform transition duration-500 group-hover:scale-105"
+            />
+            {/* שם ומידע על הפרויקט */}
+            <div className="p-4 bg-white">
+              <h2 className="text-xl font-semibold mb-1">{project.title}</h2>
+              {project.subtitle && <p className="text-gray-600 text-sm">{project.subtitle}</p>}
+            </div>
+          </Link>
+        ))}
+      </div>
+    </main>
+  );
+}
+
+export default Projects;
+
+// ProjectDetails.jsx
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+
+function ProjectDetails({ projects }) {
+  const { projectId } = useParams();
+  // מוצאים את נתוני הפרויקט לפי ה-ID מהנתיב
+  const project = projects.find(p => p.id === projectId);
+
+  if (!project) {
+    // במקרה וה-ID לא נמצא (למשל רענון על פרויקט שלא קיים במערך)
+    return (
+      <main className="pt-20 p-4">
+        <p>הפרויקט לא נמצא.</p>
+        <Link to="/projects" className="text-blue-600 hover:underline">חזרה לכל הפרויקטים</Link>
+      </main>
+    );
+  }
+
+  return (
+    <main className="pt-20 px-4 max-w-5xl mx-auto">
+      {/* כותרת הפרויקט */}
+      <h1 className="text-3xl font-bold mb-2">{project.title}</h1>
+      {project.subtitle && <h2 className="text-xl text-gray-700 mb-6">{project.subtitle}</h2>}
+      {/* גלריית תמונות */}
+      <div className="space-y-4">
+        {project.images.map((src, index) => (
+          <img key={index} src={src} alt={`${project.title} - image ${index+1}`} className="w-full object-cover rounded-lg shadow" />
+        ))}
+      </div>
+      {/* כפתור חזרה או קישור לכל הפרויקטים */}
+      <div className="mt-8">
+        <Link to="/projects" className="text-blue-600 hover:underline">⇠ חזרה לכל הפרויקטים</Link>
+      </div>
+    </main>
+  );
+}
+
+export default ProjectDetails;
+// Contact.jsx
+import React, { useState } from 'react';
+
+function Contact() {
+  // State מקומי עבור שדות הטופס
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // ניתן להוסיף ולידציה בסיסית
+    if (name && email && message) {
+      // כאן אפשר לשלוח את הנתונים לשרת באמצעות fetch/axios 
+      console.log('Form submitted:', { name, email, message });
+      setSubmitted(true);
+      // איפוס שדות (לא חובה)
+      setName(''); setEmail(''); setMessage('');
+    }
+  };
+
+  return (
+    <main className="pt-20 px-4 max-w-2xl mx-auto">
+      <h1 className="text-3xl font-bold text-center mb-8">יצירת קשר</h1>
+      {/* פרטי יצירת קשר ישירים */}
+      <div className="mb-8 text-center">
+        <p className="text-lg mb-2">נשמח לשמוע מכם! ניתן לפנות אלינו בכל שאלה.</p>
+        <p className="text-md">📞 <a href="tel:03-5551234" className="hover:underline">03-555-1234</a></p>
+        <p className="text-md">✉️ <a href="mailto:info@examplestudio.com" className="hover:underline">info@examplestudio.com</a></p>
+      </div>
+      {/* טופס יצירת קשר */}
+      {submitted ? (
+        // הודעת תודה לאחר שליחה
+        <div className="bg-green-50 p-4 rounded">
+          <p className="text-green-800">תודה רבה! פנייתך נשלחה בהצלחה. נחזור אליך בהקדם.</p>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="name">שם:</label>
+            <input 
+              id="name" 
+              type="text" 
+              value={name} 
+              onChange={(e) => setName(e.target.value)}
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              placeholder="הקלד את שמך"
+              required 
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="email">דוא"ל:</label>
+            <input 
+              id="email" 
+              type="email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              placeholder="yourname@example.com"
+              required 
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="message">הודעה:</label>
+            <textarea 
+              id="message" 
+              rows="5" 
+              value={message} 
+              onChange={(e) => setMessage(e.target.value)}
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              placeholder="מה ברצונך לשאול או לספר לנו?" 
+              required 
+            />
+          </div>
+          <button 
+            type="submit" 
+            className="w-full bg-black text-white py-2 px-4 font-medium rounded hover:bg-gray-800 transition"
+          >
+            שליחה
+          </button>
+        </form>
+      )}
+    </main>
+  );
+}
+
+export default Contact;
