@@ -1,194 +1,310 @@
-// About.jsx
-import React from 'react';
-
-function About() {
-  return (
-    <main className="pt-20 px-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">אודות הסטודיו</h1>
-      <p className="text-lg leading-relaxed mb-4">
-        סטודיו Example הוקם מתוך תשוקה לעיצוב פנים פורץ דרך המשלב אסתטיקה ופונקציונליות. 
-        בראש הסטודיו עומדת המעצבת יעל דוגמא (YAEL DUGMA), בעלת ניסיון של למעלה מ-15 שנה בעיצוב חללים פרטיים ומסחריים. 
-        יעל בוגרת המחלקה לעיצוב פנים במכללת שנקר, ומאמינה ביצירת מרחבים שמשקפים את האישיות והחלומות של הלקוחות.
-      </p>
-      <p className="text-lg leading-relaxed mb-4">
-        לכל פרויקט אנחנו ניגשים בגישה אישית וייחודית: החל מהיכרות מעמיקה עם סגנון החיים והצרכים של הלקוח, 
-        דרך פיתוח קונספט יצירתי וחדשני, ועד לביצוע קפדני down to the last detail. 
-        אנו מאמינים בעבודה צמודה עם הלקוח, בשקיפות מלאה ובמתן שירות מקצועי וחם לאורך כל תהליך התכנון והבניה.
-      </p>
-      <p className="text-lg leading-relaxed mb-4">
-        במהלך השנים הסטודיו שלנו עיצב מגוון בתים ודירות יוקרה, חללי משרדים חדשניים וחנויות קונספט. 
-        עבודותינו התפרסמו במגזינים מובילים וזכו לשבחים על היצירתיות והדיוק. 
-        המטרה שלנו היא להגשים ללקוחותינו את החלום – ליצור עבורם סביבה יפהפייה, נוחה ומעוררת השראה שהם אוהבים לשהות בה.
-      </p>
-      <p className="text-lg leading-relaxed mb-4">
-        נשמח לצרף אתכם למסע העיצוב שלנו וליצור יחד איתכם את הבית או העסק המושלם עבורכם.
-      </p>
-    </main>
-  );
-}
-
-export default About;
-
-
-// Projects.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-function Projects({ projects }) {
-  return (
-    <main className="pt-20 px-4">
-      <h1 className="text-3xl font-bold text-center mb-8">הפרויקטים שלנו</h1>
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map(project => (
-          <Link 
-            key={project.id} 
-            to={`/projects/${project.id}`} 
-            className="group block overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition"
-          >
-            {/* תמונת קאבר של הפרויקט */}
-            <img 
-              src={project.images[0]} 
-              alt={project.title} 
-              className="w-full h-56 object-cover transform transition duration-500 group-hover:scale-105"
-            />
-            {/* שם ומידע על הפרויקט */}
-            <div className="p-4 bg-white">
-              <h2 className="text-xl font-semibold mb-1">{project.title}</h2>
-              {project.subtitle && <p className="text-gray-600 text-sm">{project.subtitle}</p>}
-            </div>
-          </Link>
-        ))}
-      </div>
-    </main>
-  );
-}
-
-export default Projects;
-
-// ProjectDetails.jsx
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-
-function ProjectDetails({ projects }) {
-  const { projectId } = useParams();
-  // מוצאים את נתוני הפרויקט לפי ה-ID מהנתיב
-  const project = projects.find(p => p.id === projectId);
-
-  if (!project) {
-    // במקרה וה-ID לא נמצא (למשל רענון על פרויקט שלא קיים במערך)
-    return (
-      <main className="pt-20 p-4">
-        <p>הפרויקט לא נמצא.</p>
-        <Link to="/projects" className="text-blue-600 hover:underline">חזרה לכל הפרויקטים</Link>
-      </main>
-    );
-  }
-
-  return (
-    <main className="pt-20 px-4 max-w-5xl mx-auto">
-      {/* כותרת הפרויקט */}
-      <h1 className="text-3xl font-bold mb-2">{project.title}</h1>
-      {project.subtitle && <h2 className="text-xl text-gray-700 mb-6">{project.subtitle}</h2>}
-      {/* גלריית תמונות */}
-      <div className="space-y-4">
-        {project.images.map((src, index) => (
-          <img key={index} src={src} alt={`${project.title} - image ${index+1}`} className="w-full object-cover rounded-lg shadow" />
-        ))}
-      </div>
-      {/* כפתור חזרה או קישור לכל הפרויקטים */}
-      <div className="mt-8">
-        <Link to="/projects" className="text-blue-600 hover:underline">⇠ חזרה לכל הפרויקטים</Link>
-      </div>
-    </main>
-  );
-}
-
-export default ProjectDetails;
-// Contact.jsx
-import React, { useState } from 'react';
-
-function Contact() {
-  // State מקומי עבור שדות הטופס
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // ניתן להוסיף ולידציה בסיסית
-    if (name && email && message) {
-      // כאן אפשר לשלוח את הנתונים לשרת באמצעות fetch/axios 
-      console.log('Form submitted:', { name, email, message });
-      setSubmitted(true);
-      // איפוס שדות (לא חובה)
-      setName(''); setEmail(''); setMessage('');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interior Design Studio</title>
+  <style>
+    /* Reset some default margins for a cleaner base */
+    body, h1, h2, p, ul, li, form, input, textarea, button { margin: 0; padding: 0; }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
     }
-  };
 
-  return (
-    <main className="pt-20 px-4 max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-8">יצירת קשר</h1>
-      {/* פרטי יצירת קשר ישירים */}
-      <div className="mb-8 text-center">
-        <p className="text-lg mb-2">נשמח לשמוע מכם! ניתן לפנות אלינו בכל שאלה.</p>
-        <p className="text-md">📞 <a href="tel:03-5551234" className="hover:underline">03-555-1234</a></p>
-        <p className="text-md">✉️ <a href="mailto:info@examplestudio.com" className="hover:underline">info@examplestudio.com</a></p>
-      </div>
-      {/* טופס יצירת קשר */}
-      {submitted ? (
-        // הודעת תודה לאחר שליחה
-        <div className="bg-green-50 p-4 rounded">
-          <p className="text-green-800">תודה רבה! פנייתך נשלחה בהצלחה. נחזור אליך בהקדם.</p>
+    /* Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0; width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav .logo {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin-left: 20px; }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover { color: #777; }
+
+    /* Hero Section */
+    #hero {
+      height: 100vh;
+      background: url('https://source.unsplash.com/OtXADkUh3-I/1920x1080') no-repeat center center;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    /* Dark overlay to improve text readability on hero image */
+    #hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    #hero .hero-content {
+      position: relative;  /* to position content above the overlay */
+      padding: 0 20px;
+    }
+    #hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    #hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Sections General Styling */
+    section { padding: 80px 20px; }
+    section h2 {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+
+    /* About Section */
+    #about .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    #about p {
+      font-size: 1em;
+      margin-bottom: 1em;
+      text-align: justify;
+    }
+
+    /* Projects Gallery Section */
+    #projects .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #projects .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    /* Responsive grid: 2 columns on tablets, 3 on desktops */
+    @media (min-width: 600px) {
+      #projects .gallery { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 900px) {
+      #projects .gallery { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      /* Fixed aspect ratio (4:3) for all images */
+      padding-top: 75%;
+    }
+    .gallery-item img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    /* Caption overlay on images */
+    .gallery-item h3 {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 10px;
+      font-size: 1em;
+    }
+    .gallery-item h3 span {
+      font-weight: normal;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+
+    /* Contact Section */
+    #contact .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #contact p {
+      font-size: 1em;
+      color: #555;
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+    form { display: flex; flex-direction: column; }
+    form label {
+      margin: 0.5em 0 0.2em;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      padding: 10px;
+      margin-bottom: 1em;
+      font: 1em sans-serif;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form textarea { resize: vertical; }
+    button[type=submit] {
+      align-self: flex-start;
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button[type=submit]:hover { background: #555; }
+
+    /* Fade-in animation for scroll appearance */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    /* Smooth scrolling for anchor links */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="#hero" class="logo">Interior Studio</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Crafting Spaces, Creating Dreams</h1>
+      <p>We design interiors that blend elegance and functionality, transforming your vision into an inspiring reality.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container fade-in">
+      <h2>About Our Studio</h2>
+      <p>Our interior design studio is a boutique firm with over 20 years of experience in creating bespoke, luxurious interiors for both residential and commercial spaces. We pride ourselves on an imaginative yet timeless approach that results in beautiful, comfortable environments tailored to each client.</p>
+      <p>At Interior Studio, we believe every project is unique. We listen closely to our clients’ needs and aspirations, then translate them into a cohesive design plan. From initial concept and space planning to the final styling touches, we manage each step with meticulous attention to detail and superior craftsmanship.</p>
+      <p>Our team collaborates with skilled artisans and sources high-quality materials to ensure every design is executed to perfection. We are passionate about crafting spaces that reflect our clients’ personalities and lifestyles while exceeding their expectations. Our goal is to deliver **dream homes** and inspiring workplaces that our clients will love for years to come.</p>
+      <p>We invite you to explore our portfolio below and imagine how we can transform **your** space into something extraordinary.</p>
+    </div>
+  </section>
+
+  <!-- Projects Gallery Section -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects Gallery</h2>
+      <div class="gallery">
+        <div class="gallery-item fade-in">
+          <img src="https://source.unsplash.com/c0JoR_-2x3E/800x600" alt="Project 1" />
+          <h3>Coastal Apartment <span>– Miami</span></h3>
         </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium mb-1" htmlFor="name">שם:</label>
-            <input 
-              id="name" 
-              type="text" 
-              value={name} 
-              onChange={(e) => setName(e.target.value)}
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
-              placeholder="הקלד את שמך"
-              required 
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" htmlFor="email">דוא"ל:</label>
-            <input 
-              id="email" 
-              type="email" 
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
-              placeholder="yourname@example.com"
-              required 
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1" htmlFor="message">הודעה:</label>
-            <textarea 
-              id="message" 
-              rows="5" 
-              value={message} 
-              onChange={(e) => setMessage(e.target.value)}
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
-              placeholder="מה ברצונך לשאול או לספר לנו?" 
-              required 
-            />
-          </div>
-          <button 
-            type="submit" 
-            className="w-full bg-black text-white py-2 px-4 font-medium rounded hover:bg-gray-800 transition"
-          >
-            שליחה
-          </button>
-        </form>
-      )}
-    </main>
-  );
-}
+        <div class="gallery-item fade-in">
+          <img src="https://source.unsplash.com/WgkA3CSFrjc/800x600" alt="Project 2" />
+          <h3>Luxury Home <span>– Toronto</span></h3>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="https://source.unsplash.com/umAXneH4GhA/800x600" alt="Project 3" />
+          <h3>Modern Loft <span>– London</span></h3>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="https://source.unsplash.com/rEJxpBskj3Q/800x600" alt="Project 4" />
+          <h3>Penthouse Suite <span>– New York</span></h3>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="https://source.unsplash.com/0sDzRgrN_pI/800x600" alt="Project 5" />
+          <h3>Family Residence <span>– Chicago</span></h3>
+        </div>
+        <div class="gallery-item fade-in">
+          <img src="https://source.unsplash.com/EVjqpcn79AM/800x600" alt="Project 6" />
+          <h3>Countryside Villa <span>– Tuscany</span></h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
-export default Contact;
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container fade-in">
+      <h2>Contact Us</h2>
+      <p>Ready to discuss your interior design project? We'd love to hear from you. Please fill out the form below, and we will get back to you as soon as possible.</p>
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // Fade-in elements on scroll using Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Handle contact form submission
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for reaching out! We will get back to you soon.');
+      contactForm.reset();
+    });
+  </script>
+
+</body>
+</html>
