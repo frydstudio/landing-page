@@ -1,120 +1,638 @@
-/* hebrew */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 300;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9H0TbFzsQ.woff2) format('woff2');
-  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
-}
-/* math */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 300;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9GKTbFzsQ.woff2) format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 300;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9GYTbFzsQ.woff2) format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 300;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9H4TbFzsQ.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 300;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9H2TbE.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* hebrew */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9H0TbFzsQ.woff2) format('woff2');
-  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
-}
-/* math */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9GKTbFzsQ.woff2) format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9GYTbFzsQ.woff2) format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9H4TbFzsQ.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9H2TbE.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* hebrew */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9H0TbFzsQ.woff2) format('woff2');
-  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
-}
-/* math */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9GKTbFzsQ.woff2) format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9GYTbFzsQ.woff2) format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9H4TbFzsQ.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://fonts.gstatic.com/s/heebo/v28/NGS6v5_NC0k9P9H2TbE.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="סטודיו פריד - עיצובים ייחודיים המשלבים יצירתיות וטכנולוגיה מתקדמת">
+  <meta name="keywords" content="עיצוב, סטודיו פריד, טכנולוגיה מתקדמת, עיצוב בהתאמה אישית, סדנאות יצירה">
+  <title>FRYD STUDIO</title>
+  
+  <!-- הטענת גופן Heebo עם משקלים 300,400,700 -->
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset בסיסי */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Heebo', sans-serif;
+      background-color: #f9f9f9;
+      color: #33302B;
+      direction: rtl;
+      line-height: 1.6;
+    }
+    
+    a {
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: #d97d10;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(to right, #2F6376, #93BDCC);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    header h1 {
+      font-size: 3em;
+      font-weight: 700;
+      z-index: 1;
+      position: relative;
+    }
+    
+    header p {
+      font-size: 1.2em;
+      font-weight: 400;
+      margin-top: 10px;
+      z-index: 1;
+      position: relative;
+    }
+    
+    /* Navigation */
+    nav {
+      background-color: #F09415;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav a {
+      margin: 0 20px;
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+    
+    nav a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Section Titles */
+    section h2 {
+      color: #2F6376;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 700;
+    }
+    
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    /* About Section עם אפקט קריאה/סגירה */
+    .about-section {
+      max-height: 150px;
+      overflow: hidden;
+      position: relative;
+      transition: max-height 0.5s ease;
+      text-align: center;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-size: 1.1em;
+      font-weight: 300;
+    }
+    
+    .about-section::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: linear-gradient(to bottom, rgba(249,249,249,0), #f9f9f9);
+    }
+    
+    .read-more-btn {
+      display: inline-block;
+      background-color: #F09415;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+    
+    .read-more-btn:hover {
+      background-color: #d97d10;
+    }
+    
+    /* כפתור קטלוג */
+    .catalog {
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .catalog-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #F09415;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+    
+    .catalog-button:hover {
+      background-color: #d97d10;
+    }
+    
+    /* Grid Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .card-content h3 {
+      color: #2F6376;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+    
+    .card-content p {
+      font-size: 1em;
+      color: #555;
+      font-weight: 300;
+    }
+    
+    /* Testimonials */
+    .testimonials .card {
+      padding: 30px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #282c34;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+    
+    footer p {
+      margin-bottom: 10px;
+      font-weight: 300;
+    }
+    
+    footer img {
+      vertical-align: middle;
+    }
+    
+    /* Chat Widget */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #F09415;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8em;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+      z-index: 100;
+    }
+    
+    .chat-widget:hover {
+      background-color: #d97d10;
+    }
+    
+    .chat-box {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 320px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 100;
+    }
+    
+    .chat-box header {
+      background-color: #F09415;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-weight: 700;
+      position: relative;
+    }
+    
+    .chat-box .close-chat {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    
+    .chat-box form {
+      padding: 15px;
+    }
+    
+    .chat-box input,
+    .chat-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      font-weight: 300;
+    }
+    
+    .chat-box button {
+      width: 100%;
+      background-color: #F09415;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+    
+    .chat-box button:hover {
+      background-color: #d97d10;
+    }
+    
+    /* Popup Styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    
+    .popup-content {
+      background: #fff;
+      max-width: 400px;
+      width: 90%;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    /* Mailchimp Overrides */
+    #mc_embed_signup {
+      width: 100% !important;
+    }
+    
+    #mc_embed_signup_scroll {
+      text-align: center;
+    }
+    
+    .mc-field-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .mc-field-group input[type="email"],
+    .mc-field-group #mc-embedded-subscribe {
+      width: 220px;
+      height: 40px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    
+    .mc-field-group input[type="email"] {
+      text-align: center;
+    }
+    
+    #mc-embedded-subscribe {
+      background-color: #1d1e23;
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 5px;
+      line-height: 40px;
+    }
+    
+    #mc-embedded-subscribe:hover {
+      background-color: #d97d10;
+    }
+    
+    .clear.foot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      nav a {
+        margin: 0 10px;
+      }
+      .chat-box {
+        width: 90%;
+        right: 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Popup חלון הרשמה -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+      <div style="margin-bottom: 10px;">
+        <h1 style="font-size: 1.8em; color: #2F6376; margin-bottom: 5px; font-weight: 700;">FRYD STUDIO</h1>
+        <p style="font-weight: 700; font-size: 1.1em;">האתר בקרוב יעלה לאוויר</p>
+      </div>
+      <p style="font-size: 0.9em; margin-bottom: 10px; font-weight: 300;">
+        בינתיים אתם מוזמנים להירשם לניוזליטר שלנו בו נעדכן על עיצובים חדשים ומבצעים מיוחדים.<br>
+        כמובן – נפנק אתכם במשהו קטן :)
+      </p>
+      <p style="font-weight: 700; margin-bottom: 15px;">קבלו 10% הנחה על ההזמנה הראשונה שלכם</p>
+      
+      <!-- טופס Mailchimp -->
+      <div id="mc_embed_shell">
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+        <div id="mc_embed_signup">
+          <form action="https://frydstudio.us11.list-manage.com/subscribe/post?u=c27d02b4487ed8e0ce56412e7&amp;id=afc80efd29&amp;f_id=003ca4e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+            <div id="mc_embed_signup_scroll">
+              <div class="mc-field-group">
+                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required placeholder="name@example.com">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="הרשמה">
+              </div>
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
+              </div>
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_c27d02b4487ed8e0ce56412e7_afc80efd29" tabindex="-1" value="">
+              </div>
+            </div>
+          </form>
+        </div>
+        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+        <script type="text/javascript">
+          (function($) {
+            window.fnames = [];
+            window.ftypes = [];
+            fnames[0] = 'EMAIL'; ftypes[0] = 'email';
+            fnames[1] = 'FNAME'; ftypes[1] = 'text';
+            fnames[2] = 'LNAME'; ftypes[2] = 'text';
+            fnames[3] = 'ADDRESS'; ftypes[3] = 'address';
+            fnames[4] = 'PHONE'; ftypes[4] = 'phone';
+            fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday';
+            fnames[6] = 'COMPANY'; ftypes[6] = 'text';
+          }(jQuery));
+          var $mcj = jQuery.noConflict(true);
+        </script>
+      </div>
+      
+      <p style="font-size: 0.9em; margin: 20px 0 10px; font-weight: 300;">אתם מוזמנים להוריד את הקטלוג החדש שלנו.</p>
+      <a href="frydstudio-catalog2025.pdf" download class="catalog-button">להורדת קטלוג 2025</a>
+      
+      <div style="margin-top: 15px; display: flex; justify-content: center; gap: 15px;">
+        <a href="https://www.facebook.com/profile.php?id=61567142757395&locale=he_IL" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="24" height="24">
+        </a>
+        <a href="https://www.instagram.com/fryd__studio/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" width="24" height="24">
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Header -->
+  <header>
+    <h1>FRYD STUDIO</h1>
+    <p>Creativity meets technology</p>
+  </header>
+  
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">אודות</a>
+    <a href="#services">שירותים</a>
+    <a href="#gallery">גלריה</a>
+    <a href="#testimonials">לקוחות ממליצים</a>
+  </nav>
+  
+  <!-- About Section -->
+  <section id="about">
+    <h2>מי אנחנו?</h2>
+    <div class="about-section" id="about-section">
+      <p>
+        סטודיו פריד מתמחה ביצירת עיצובים חדשניים וייחודיים שמשלבים יצירתיות עם טכנולוגיה מתקדמת.
+        המוצרים שלנו תוכננו להציע שילוב מושלם בין אסתטיקה לפונקציונליות, ומיועדים לתת מענה לצרכים המגוונים של לקוחותינו.
+        כל פרויקט מתחיל בהקשבה והבנה מעמיקה של החזון שלך ומסתיים ביצירה מרהיבה.
+      </p>
+    </div>
+    <button class="read-more-btn" id="read-more-btn" onclick="toggleAbout()">המשך קריאה</button>
+  </section>
+  
+  <!-- קטלוג -->
+  <section id="catalog" class="catalog">
+    <h2>קטלוג 2025</h2>
+    <a href="frydstudio-catalog2025.pdf" class="catalog-button" download>להורדה לחץ כאן</a>
+  </section>
+  
+  <!-- שירותים -->
+  <section id="services">
+    <h2>השירותים שלנו</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-content">
+          <h3>עיצובים בהתאמה אישית</h3>
+          <p>עיצובים ייחודיים שמותאמים לחלום שלך.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>מוצרים קיימים</h3>
+          <p>מבחר מוצרים מעוצבים הזמינים להזמנה מידית.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>בקרוב: סדנאות יצירה</h3>
+          <p>למדו ליצור פריטים ייחודיים בסדנאות מקצועיות.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- גלריה -->
+  <section id="gallery">
+    <h2>גלריה</h2>
+    <div class="grid">
+      <!-- החלף את התמונה הבאה בתמונות הסטודיו שלך -->
+      <div class="card">
+        <img src="product1.jpg" alt="תמונה 1">
+      </div>
+      <div class="card">
+        <img src="product2.jpg" alt="תמונה 2">
+      </div>
+      <!-- ניתן להוסיף עוד תמונות לפי הצורך -->
+    </div>
+  </section>
+  
+  <!-- לקוחות ממליצים -->
+  <section id="testimonials">
+    <h2>לקוחות ממליצים</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-content">
+          <p>"חוויה מדהימה! הסטייל והעיצוב של סטודיו פריד שדרגו את כל המראה בבית שלי."</p>
+          <h3>איילת</h3>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <p>"עבודה מקצועית, חדשנית ועם יחס אישי יוצא דופן. מומלץ בחום!"</p>
+          <h3>יוסי</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 FRYD STUDIO</p>
+    <p>
+      <a href="https://www.facebook.com/profile.php?id=61567142757395&locale=he_IL" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="24" height="24">
+      </a>
+      |
+      <a href="https://www.instagram.com/fryd__studio/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" width="24" height="24">
+      </a>
+    </p>
+  </footer>
+  
+  <!-- Chat Widget -->
+  <div class="chat-widget" onclick="toggleChat()">💬</div>
+  <div class="chat-box" id="chatBox">
+    <header>
+      השאר פרטים ונחזור אליך
+      <button class="close-chat" onclick="toggleChat()">X</button>
+    </header>
+    <form>
+      <input type="text" name="name" placeholder="שם מלא" required>
+      <input type="email" name="email" placeholder="אימייל" required>
+      <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
+      <button type="submit">שלח</button>
+    </form>
+  </div>
+  
+  <script>
+    // הצגת הפופאפ עם הרשמה בעת טעינת הדף
+    document.addEventListener("DOMContentLoaded", function() {
+      const popupOverlay = document.getElementById('popupOverlay');
+      popupOverlay.style.display = 'flex';
+      document.body.classList.add('popup-open');
+    });
+    
+    function toggleChat() {
+      const chatBox = document.getElementById('chatBox');
+      chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+    }
+    
+    function toggleAbout() {
+      const aboutSection = document.getElementById('about-section');
+      const readMoreBtn = document.getElementById('read-more-btn');
+      if (aboutSection.style.maxHeight === 'none') {
+        aboutSection.style.maxHeight = '150px';
+        aboutSection.classList.add('about-section');
+        readMoreBtn.innerHTML = 'המשך קריאה';
+      } else {
+        aboutSection.style.maxHeight = 'none';
+        aboutSection.classList.remove('about-section');
+        readMoreBtn.innerHTML = 'סגור טקסט';
+      }
+    }
+  </script>
+  
+</body>
+</html>
